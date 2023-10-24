@@ -86,7 +86,12 @@ public class Team {
     public String getGender() {
         return gender.name(); // Obtener el nombre del enum como una cadena
     }
-    
+
+    public LinkedList<Player> getPlayers() {
+        LinkedList<Player> players = new LinkedList<>();
+        // Obtener la lista de jugadores del equipo
+        return players;
+    }
 
     // Getters para las estadísticas del equipo
     public int getMatchesPlayed() {
