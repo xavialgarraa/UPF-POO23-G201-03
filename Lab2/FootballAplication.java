@@ -1,5 +1,5 @@
 public class FootballAplication {
-    public static void FootballAplication(String[] args) {
+    public static void footballAplication(String[] args) {
         // Nacionalidades
         Country espanya = new Country("Espanya");
         Country argentina = new Country("Argentina");
@@ -33,7 +33,7 @@ public class FootballAplication {
         Player jugador5 = new Player(false, "Lewandowski", 33, polonia);
 
         //Jugadores Barça 
-        Player FCB1 = new Player(false, "Ter Stegen" , 31, alemania); //mirar PQ COÑO FALLA JAJAJA
+        Player FCB1 = new Player(false, "Ter Stegen" , 31, alemania); 
         Player FCB2 = new Player(false, "Piqué", 34, espanya);
         Player FCB3 = new Player(false, "Jordi Alba", 32, espanya);
         Player FCB4 = new Player(false, "Sergio Busquets", 33, espanya);
@@ -72,7 +72,7 @@ public class FootballAplication {
         Player ATM11 = new Player(false, "Correa", 26, argentina);
 
         //Jugadores Real Sociedad (RS)
-        Player RS1 = new Player(false, "Oyarzabal", 24, espanya);
+        Player RS1 = new Player(false, "Remiro", 24, espanya);
         Player RS2 = new Player(false, "Silva", 35, espanya);
         Player RS3 = new Player(false, "Merino", 25, espanya);
         Player RS4 = new Player(false, "Isak", 21, suecia);
@@ -80,7 +80,7 @@ public class FootballAplication {
         Player RS6 = new Player(false, "Elustondo", 26, espanya);
         Player RS7 = new Player(false, "Monreal", 35, espanya);
         Player RS8 = new Player(false, "Guevara", 24, espanya);
-        Player RS9 = new Player(false, "Januzaj", 26, belgica);
+        Player RS9 = new Player(false, "Oyarzabal", 24, espanya);
         Player RS10 = new Player(false, "Le Normand", 24, francia);
         Player RS11 = new Player(false, "Zubeldia", 23, espanya);
 
@@ -122,6 +122,8 @@ public class FootballAplication {
         Player VAL9 = new Player(false, "Maxi Gómez", 24, uruguay);
         Player VAL10 = new Player(false, "Kang In-lee", 19, corea);
         Player VAL11 = new Player(false, "Gameiro", 33, francia);
+
+        
 
 
         // Jugadoras femeninas 
@@ -231,7 +233,7 @@ public class FootballAplication {
         VAL.addPlayer(VAL11);
 
         //Crear liga
-        League LALIGA = new League("LA LIGA EA SPORTS", espanya, 0);//DIria que 0 es masc, habra que mirar
+        League LALIGA = new League("LA LIGA EA SPORTS", espanya, League.L_Gender.MASCULINO);
 
         //Añadir equipos a la liga
         LALIGA.addTeam(FCB);
