@@ -20,6 +20,9 @@ public class League {
         this.country = country;
         this.gender = gender;
         this.numMatches = 0;
+        this.teams = new LinkedList<Team>();
+        this.matches = new LinkedList<Match>();
+
     }
 
     public void addTeam(Team team) {
@@ -28,11 +31,12 @@ public class League {
 
     public void generateMatches() {
         for (int i = 0; i < teams.size(); i++) {
-            for (int j = i + 1; j < teams.size(); j++) {
-                Match match1 = new Match(teams.get(i), teams.get(j));
-                Match match2 = new Match(teams.get(j), teams.get(i));
-                matches.add(match1);
-                matches.add(match2);
+            for (int j = 0; j < teams.size(); j++) {
+                if (i != j){
+                    Match match1 = new Match(teams.get(i), teams.get(j));
+                    matches.add(match1); 
+                }
+                
             }
         }
     }

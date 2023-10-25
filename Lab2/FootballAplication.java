@@ -1,5 +1,5 @@
 public class FootballAplication {
-    public static void footballAplication(String[] args) {
+    public static void main(String[] args) {
         // Nacionalidades
         Country espanya = new Country("Espanya");
         Country argentina = new Country("Argentina");
@@ -382,6 +382,9 @@ public class FootballAplication {
         LALIGA.addTeam(ATH);
 
         LALIGA.printTeams();
+        LALIGA.generateMatches();
+        LALIGA.simulateMatches();
+        LALIGA.printMatches();
 
 
 
