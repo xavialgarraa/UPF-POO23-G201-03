@@ -122,6 +122,10 @@ public class Team {
         return points;
     }
 
+    public void updateStats(Match m){
+        
+    }
+
 
     public void PrintStats(){
         System.out.println("\nInformación del equipo 1:");
