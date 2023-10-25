@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "FootballAplication",
+            "request": "launch",
+            "mainClass": "FootballAplication",
+            "projectName": "UPF-POO23-G201-03_49318b7f"
+        },
+        {
+            "type": "java",
+            "name": "Practica0",
+            "request": "launch",
+            "mainClass": "Practica0",
+            "projectName": "UPF-POO23-G201-03_49318b7f"
+        },
+        {
+            "type": "java",
+            "name": "Prueba1",
+            "request": "launch",
+            "mainClass": "Prueba1",
+            "projectName": "UPF-POO23-G201-03_49318b7f"
+        }
+    ]
+}

@@ -24,6 +24,9 @@ public class FootballAplication {
         Country italia = new Country("Italia");
         Country colombia = new Country("Colombia");
         Country nigeria = new Country("Nigeria");
+        Country senegal = new Country("Senagal");
+        Country peru = new Country("Perú");
+        Country ghana = new Country("Ghana");
 
         // Jugadores masculinos 
         Player jugador1 = new Player(false, "Messi", 34, argentina);
@@ -123,8 +126,70 @@ public class FootballAplication {
         Player VAL10 = new Player(false, "Kang In-lee", 19, corea);
         Player VAL11 = new Player(false, "Gameiro", 33, francia);
 
-        
+        //Betis
+        Player BET1 = new Player(false, "Portillo", 29, espanya);
+        Player BET2 = new Player(false, "Víctor Ruiz", 32, espanya);
+        Player BET3 = new Player(false, "Álex Moreno", 28, espanya);
+        Player BET4 = new Player(false, "Marc Bartra", 31, espanya);
+        Player BET5 = new Player(false, "Joaquín", 41, espanya);
+        Player BET6 = new Player(false, "Sergio León", 32, espanya);
+        Player BET7 = new Player(false, "William Carvalho", 29, portugal);
+        Player BET8 = new Player(false, "Guardado", 35, mexico);
+        Player BET9 = new Player(false, "Aitor Ruibal", 26, espanya);
+        Player BET10 = new Player(false, "Isco", 30, espanya);
+        Player BET11 = new Player(false, "Juanmi", 28, espanya);
 
+        //Athletic club
+        Player ATH1 = new Player(false, "Unai Simón", 25, espanya);
+        Player ATH2 = new Player(false, "Yeray", 27, espanya);
+        Player ATH3 = new Player(false, "Iñigo Martínez", 31, espanya);
+        Player ATH4 = new Player(false, "Ander Capa", 30, espanya);
+        Player ATH5 = new Player(false, "Balenziaga", 33, espanya);
+        Player ATH6 = new Player(false, "Dani García", 31, espanya);
+        Player ATH7 = new Player(false, "Williams", 27, espanya);
+        Player ATH8 = new Player(false, "Raúl García", 35, espanya);
+        Player ATH9 = new Player(false, "Berenguer", 27, espanya);
+        Player ATH10 = new Player(false, "Vencedor", 24, espanya);
+        Player ATH11 = new Player(false, "Iñaki Williams", 28, espanya);
+
+        //Girona FC
+        Player GIR1 = new Player(false, "Jordi Mboula", 22, espanya);
+        Player GIR2 = new Player(false, "Samu Sáiz", 30, espanya);
+        Player GIR3 = new Player(false, "Aday", 35, espanya);
+        Player GIR4 = new Player(false, "Stuani", 35, uruguay);
+        Player GIR5 = new Player(false, "Kebe", 24, senegal);
+        Player GIR6 = new Player(false, "Pablo Maffeo", 24, espanya);
+        Player GIR7 = new Player(false, "Aleix Garcia", 26, espanya);
+        Player GIR8 = new Player(false, "Gumbau", 27, espanya);
+        Player GIR9 = new Player(false, "Cristhian Stuani", 33, uruguay);
+        Player GIR10 = new Player(false, "Franquesa", 25, espanya);
+        Player GIR11 = new Player(false, "Oscar Mingueza", 22, espanya);
+
+        //Celta de Vigo
+        Player CEL1 = new Player(false, "Iván Villar", 25, espanya);
+        Player CEL2 = new Player(false, "Joseph Aidoo", 26, ghana);
+        Player CEL3 = new Player(false, "Néstor Araujo", 30, mexico);
+        Player CEL4 = new Player(false, "Fontán", 24, espanya);
+        Player CEL5 = new Player(false, "Carlos Domínguez", 26, espanya);
+        Player CEL6 = new Player(false, "Renato Tapia", 26, peru);
+        Player CEL7 = new Player(false, "Brais Méndez", 25, espanya);
+        Player CEL8 = new Player(false, "Santi Mina", 26, espanya);
+        Player CEL9 = new Player(false, "Nolito", 35, espanya);
+        Player CEL10 = new Player(false, "Augusto Solari", 29, uruguay);
+        Player CEL11 = new Player(false, "Denis Suárez", 28, espanya);
+
+        //Rayo Vallecano
+        Player RAY1 = new Player(false, "Dimitrievski", 27, ghana);
+        Player RAY2 = new Player(false, "Mario Suárez", 35, espanya);
+        Player RAY3 = new Player(false, "Advíncula", 31, peru);
+        Player RAY4 = new Player(false, "Bebé", 31, portugal);
+        Player RAY5 = new Player(false, "Catena", 27, espanya);
+        Player RAY6 = new Player(false, "Isi Palazón", 26, espanya);
+        Player RAY7 = new Player(false, "Tito", 34, espanya);
+        Player RAY8 = new Player(false, "Trejo", 33, espanya);
+        Player RAY9 = new Player(false, "Álvaro García", 28, espanya);
+        Player RAY10 = new Player(false, "Andrés Martín", 23, espanya);
+        Player RAY11 = new Player(false, "Sergio Arribas", 21, espanya);
 
         // Jugadoras femeninas 
         Player jugadora1 = new Player(true, "Marta", 35, brasil);
@@ -146,6 +211,11 @@ public class FootballAplication {
         Team VIL = new Team("Villarreal", espanya, Team.Gender.MASCULINO);
         Team VAL = new Team("Valencia", espanya, Team.Gender.MASCULINO);
         Team RM = new Team("Real Madrid", espanya, Team.Gender.MASCULINO);
+        Team BET = new Team("Betis", espanya, Team.Gender.MASCULINO);
+        Team ATH = new Team("Athletic Club", espanya, Team.Gender.MASCULINO);
+        Team GIR = new Team("Girona FC", espanya, Team.Gender.MASCULINO);
+        Team CEL = new Team("Celta de Vigo", espanya, Team.Gender.MASCULINO);
+        Team RAY = new Team("Rayo Vallecano", espanya, Team.Gender.MASCULINO);
 
         // Agregar jugadores a los equipos
         FCB.addPlayer(FCB1);
@@ -232,6 +302,68 @@ public class FootballAplication {
         VAL.addPlayer(VAL10);
         VAL.addPlayer(VAL11);
 
+        BET.addPlayer(BET1);
+        BET.addPlayer(BET2);
+        BET.addPlayer(BET3);
+        BET.addPlayer(BET4);
+        BET.addPlayer(BET5);
+        BET.addPlayer(BET6);
+        BET.addPlayer(BET7);
+        BET.addPlayer(BET8);
+        BET.addPlayer(BET9);
+        BET.addPlayer(BET10);
+        BET.addPlayer(BET11);
+               
+        ATH.addPlayer(ATH1);
+        ATH.addPlayer(ATH2);
+        ATH.addPlayer(ATH3);
+        ATH.addPlayer(ATH4);
+        ATH.addPlayer(ATH5);
+        ATH.addPlayer(ATH6);
+        ATH.addPlayer(ATH7);
+        ATH.addPlayer(ATH8);
+        ATH.addPlayer(ATH9);
+        ATH.addPlayer(ATH10);
+        ATH.addPlayer(ATH11);
+
+        GIR.addPlayer(GIR1);
+        GIR.addPlayer(GIR2);
+        GIR.addPlayer(GIR3);
+        GIR.addPlayer(GIR4);
+        GIR.addPlayer(GIR5);
+        GIR.addPlayer(GIR6);
+        GIR.addPlayer(GIR7);
+        GIR.addPlayer(GIR8);
+        GIR.addPlayer(GIR9);
+        GIR.addPlayer(GIR10);
+        GIR.addPlayer(GIR11);
+
+        RAY.addPlayer(RAY1);
+        RAY.addPlayer(RAY2);
+        RAY.addPlayer(RAY3);
+        RAY.addPlayer(RAY4);
+        RAY.addPlayer(RAY5);
+        RAY.addPlayer(RAY6);
+        RAY.addPlayer(RAY7);
+        RAY.addPlayer(RAY8);
+        RAY.addPlayer(RAY9);
+        RAY.addPlayer(RAY10);
+        RAY.addPlayer(RAY11);
+
+        CEL.addPlayer(CEL1);
+        CEL.addPlayer(CEL2);
+        CEL.addPlayer(CEL3);
+        CEL.addPlayer(CEL4);
+        CEL.addPlayer(CEL5);
+        CEL.addPlayer(CEL6);
+        CEL.addPlayer(CEL7);
+        CEL.addPlayer(CEL8);
+        CEL.addPlayer(CEL9);
+        CEL.addPlayer(CEL10);
+        CEL.addPlayer(CEL11);
+        
+
+
         //Crear liga
         League LALIGA = new League("LA LIGA EA SPORTS", espanya, League.L_Gender.MASCULINO);
 
@@ -243,25 +375,22 @@ public class FootballAplication {
         LALIGA.addTeam(VIL);
         LALIGA.addTeam(SEV);
         LALIGA.addTeam(RS);
+        LALIGA.addTeam(BET);
+        LALIGA.addTeam(GIR);
+        LALIGA.addTeam(CEL);
+        LALIGA.addTeam(RAY);
+        LALIGA.addTeam(ATH);
+
+        LALIGA.printTeams();
 
 
-        // Actualizar estadísticas de los equipos después de un partido
-        FCB.updateStatistics(3, 1); // Ganó el partido
-        t2.updateStatistics(2, 2); // Empató el partido
 
         // Actualizar estadísticas de los jugadores después de un partido
         jugador1.updateStatistics(6, 41, 4, 1, 0); // 2 goles, 3 pases, 1 asistencia, 0 tackles, 2 tiros a puerta
         jugador2.updateStatistics(1, 28, 8, 0, 1); // 1 gol, 4 pases, 0 asistencias, 0 tackles, 0 tiros a puerta
         jugadora1.updateStatistics(9, 72, 0, 0, 0); // 0 goles, 2 pases, 0 asistencias, 0 tackles, 0 tiros a puerta
 
-        // Mostrar información de los equipos
-        FCB.PrintStats();
 
-        t2.PrintStats();
-
-        t3.PrintStats();
-
-        jugador1.PrintStats();
     }
     
 

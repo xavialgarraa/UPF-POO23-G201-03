@@ -95,4 +95,10 @@ public class League {
     public void printTopScorers() {
         // Implement logic to print the top scorers.
     }
+    
+    public void printTeams(){
+        for (Team t: teams){
+            System.out.println(t.getName());
+        }
+    }
 }
