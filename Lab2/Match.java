@@ -34,6 +34,32 @@ public class Match {
         }
     }
 
+    
+    public int getAwayGoals() {
+        return awayGoals;
+    }
+
+    public int getHomeGoals() {
+        return homeGoals;
+    }
+
+    public LinkedList<Player> getAwayScorers() {
+        return awayScorers;
+    }
+
+    public Team getAwayTeam() {
+        return awayTeam;
+    }
+
+    public LinkedList<Player> getHomeScorers() {
+        return homeScorers;
+    }
+
+    public Team getHomeTeam() {
+        return homeTeam;
+    }
+
+
 
 }
 
