@@ -1,5 +1,5 @@
 import java.util.LinkedList;
-import java.util.List;
+
 
 public class League {
     
@@ -45,11 +45,23 @@ public class League {
         }
     }
 
-    public void printMatches(Match m){
-        System.out.println("Resultado: " + m.getHomeTeam() + " " + m.getHomeGoals() + " - " + m.getAwayGoals());
+    public void printMatches(){
+        for (Match m : matches) {
+            System.out.println("Resultado: " + m.getHomeTeam() + " " + m.getHomeGoals() + " - " + m.getAwayGoals());
+        }
     }
 
     // Implement simulateMatch method for simulating individual matches.
+    public void simulateSingleMatches(Match m) {
+        m.simulateMatch();
+        m.getHomeTeam().updateStats(m);
+        m.getAwayTeam().updateStats(m);
+    }
+    
+    public void printSingleMatches(Match m){
+        System.out.println("Resultado: " + m.getHomeTeam() + " " + m.getHomeGoals() + " - " + m.getAwayGoals());
+            
+    }
 
     public String getName() {
         return name;
@@ -63,7 +75,7 @@ public class League {
         return gender;
     }
 
-    public List<Team> getTeams() {
+    public LinkedList<Team> getTeams() {
         return teams;
     }
 
@@ -71,7 +83,7 @@ public class League {
         return numMatches;
     }
 
-    public List<Match> getMatches() {
+    public LinkedList<Match> getMatches() {
         return matches;
     }
     
