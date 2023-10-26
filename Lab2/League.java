@@ -1,4 +1,10 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class League {
     
@@ -113,14 +119,80 @@ public class League {
         return matches;
     }
     
-    public void printLeagueTable() {
-        // Implement logic to print the league table.
+    /*public void printLeagueTable() {
+        / Implement logic to print the league table.
+             Collections.sort(allTeams, new Comparator<Team>() {
+            public int compare(Team t1, Team t2) {
+                // Implement sorting logic based on points and goal difference
+                int comparePoints = Integer.compare(t2.getPoints(), t1.getPoints());
+    
+                if (comparePoints == 0) {
+                    // If points are equal, compare by goal difference
+                    int goalDifference1 = t1.getGoalsScored() - t1.getGoalsAgainst();
+                    int goalDifference2 = t2.getGoalsScored() - t2.getGoalsAgainst();
+                    int compareGoalDifference = Integer.compare(goalDifference2, goalDifference1);
+    
+                    if (compareGoalDifference == 0) {
+                        // If goal difference is also equal, compare by the number of goals scored
+                        int compareGoalsScored = Integer.compare(t2.getGoalsScored(), t1.getGoalsScored());
+                        return compareGoalsScored;
+                    }
+    
+                    return compareGoalDifference;
+                }
+    
+                return comparePoints;
+            }
+        });
         
-    }
+    }*/
 
     public void printTopScorers() {
-        // Implement logic to print the top scorers.
+        System.out.println("\nTop Scorers for " + name);
+        System.out.println("-------------------------------");
+    
+        // Create a list of all players who scored in any match
+        List<Player> allScorers = new LinkedList<>();
+        Set<Player> addedPlayers = new HashSet<>();
+    
+        // Add home scorers from all matches
+        for (Match match : matches) {
+            for (Player homeScorer : match.getHomeScorers()) {
+                if (addedPlayers.add(homeScorer)) {
+                    allScorers.add(homeScorer);
+               }
+           }
+        }
+        
+            // Add away scorers from all matches
+        for (Match match : matches) {
+            for (Player awayScorer : match.getAwayScorers()) {
+                if (addedPlayers.add(awayScorer)) {
+                    allScorers.add(awayScorer);
+                }
+            }
+        }
+    
+        // Sort the players based on their goal-scoring statistics
+        Collections.sort(allScorers, new Comparator<Player>() {
+            public int compare(Player player1, Player player2) {
+                // Compare by goals scored
+                return Integer.compare(player2.getGoals(), player1.getGoals());
+            }
+        });
+    
+        // Print the top scorers
+        int count = 1;
+        for (Player player : allScorers) {
+            if (count >= 11) {
+                break; // Print only the top 10 scorers
+            }
+            System.out.println(count+". "+ player.getName() + " - Goals: " + player.getGoals());
+            count++;
+        }
     }
+    
+    
     
     public void printTeams(){
         for (Team t: teams){

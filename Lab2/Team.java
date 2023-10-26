@@ -57,7 +57,7 @@ public class Team {
         players.remove(player);
     }
 
-    // Método para actualizar las estadísticas del equipo después de un partido
+    /*/ Método para actualizar las estadísticas del equipo después de un partido
     public void updateStatistics(int goals_s, int goals_a) {
         this.matchesPlayed++;
         this.goalsScored += goals_s;
@@ -72,7 +72,7 @@ public class Team {
         } else {
             this.losses++;
         }
-    }
+    }*/
 
     // Getters para los atributos del equipo
     public String getName() {
@@ -87,9 +87,11 @@ public class Team {
         return gender.ordinal(); // Obtener el nombre del enum como un int
     }
 
+     public String getGenderStr() {
+        return gender.name(); // Obtener el nombre del enum como un int
+    }
+
     public LinkedList<Player> getPlayers() {
-        LinkedList<Player> players = new LinkedList<>();
-        // Obtener la lista de jugadores del equipo
         return players;
     }
 
@@ -123,7 +125,36 @@ public class Team {
     }
 
     public void updateStats(Match m){
-        
+        if (this.name == m.getHomeTeam().getName()) {
+            this.matchesPlayed++;
+            this.goalsScored += m.getHomeGoals();
+            this.goalsAgainst += m.getAwayGoals();
+            if (m.getHomeGoals()>m.getAwayGoals()){
+                this.points += 3;
+                this.wins++;
+            } else if (m.getHomeGoals()< m.getAwayGoals()){
+                this.losses++;
+            } else{
+                this.points++;
+                this.ties++;
+            } 
+        }
+        if (this.name == m.getAwayTeam().getName()) {
+            this.matchesPlayed++;
+            this.goalsScored += m.getAwayGoals();
+            this.goalsAgainst += m.getHomeGoals();
+            if (m.getHomeGoals() < m.getAwayGoals()){
+                this.points += 3;
+                this.wins++;
+            } else if (m.getHomeGoals()> m.getAwayGoals()){
+                this.losses++;
+            } else{
+                this.points++;
+                this.ties++;
+            } 
+        } else{
+            System.out.println("El partido llevado a estadísticas no existe.");
+        }
     }
 
 
@@ -131,7 +162,7 @@ public class Team {
         System.out.println("\nInformación del equipo 1:");
         System.out.println("Nombre: " + getName());
         System.out.println("País: " + getCountry());
-        System.out.println("Género: " + getGender());
+        System.out.println("Género: " + getGenderStr());
         System.out.println("Partidos jugados: " + getMatchesPlayed());
         System.out.println("Puntos totales: " + getPoints());
         System.out.println("Victorias: " + getWins());

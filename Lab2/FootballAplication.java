@@ -382,6 +382,8 @@ public class FootballAplication {
         LALIGA.printRounds();
         LALIGA.simulateMatches();
         LALIGA.printMatches();
+        FCB.PrintStats();
+        LALIGA.printTopScorers();
 
     }
     
