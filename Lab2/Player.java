@@ -71,6 +71,10 @@ public class Player {
     public int getGoals() {
         return goals;
     }
+
+    public void marcarGol() {
+        this.goals++;
+    }
     
     public void PrintStats(){
     System.out.println("\nInformación de "+getName()+ ":");

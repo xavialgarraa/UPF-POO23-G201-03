@@ -12,25 +12,33 @@ public class Match {
     public Match(Team home, Team away){
         this.homeTeam = home;
         this.awayTeam = away;
+        this.homeScorers = new LinkedList<Player>();
+        this.awayScorers = new LinkedList<Player>();
     }
 
     public void simulateMatch() {
         Random random = new Random();
-        int homeGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
-        int awayGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo visitante (0-6)
-        
-        // Simulate home team's goals and goal scorers
-        for (int i = 0; i < homeGoals; i++) {
-            int randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
-            Player scorer = homeTeam.getPlayers().get(randomGoalIndex);
-            homeScorers.add(scorer);
-        }
-
-        // Simulate away team's goals and goal scorers
-        for (int i = 0; i < awayGoals; i++) {
-            int randomGoalIndex = random.nextInt(awayTeam.getPlayers().size());
-            Player scorer = awayTeam.getPlayers().get(randomGoalIndex);
-            awayScorers.add(scorer);
+        homeGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
+        awayGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo visitante (0-6)
+        // Verificar si los equipos no son nulos antes de simular los goles
+        if (homeTeam != null && awayTeam != null) {
+            // Simulate home team's goals and goal scorers
+            LinkedList<Player> homePlayers = homeTeam.getPlayers();
+            for (int i = 0; i < homeGoals && !homePlayers.isEmpty(); i++) {
+                int randomGoalIndex = random.nextInt(homePlayers.size());
+                Player scorer = homePlayers.get(randomGoalIndex);
+                homeScorers.add(scorer);
+                scorer.marcarGol(); // Actualiza estadísticas del jugador
+            }
+    
+            // Simulate away team's goals and goal scorers
+            LinkedList<Player> awayPlayers = awayTeam.getPlayers();
+            for (int i = 0; i < awayGoals && !awayPlayers.isEmpty(); i++) {
+                int randomGoalIndex = random.nextInt(awayPlayers.size());
+                Player scorer = awayPlayers.get(randomGoalIndex);
+                awayScorers.add(scorer);
+                scorer.marcarGol(); // Actualiza estadísticas del jugador
+            }
         }
     }
 

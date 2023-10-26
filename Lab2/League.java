@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 
-
 public class League {
     
     public enum L_Gender {
@@ -26,7 +25,22 @@ public class League {
     }
 
     public void addTeam(Team team) {
-        teams.add(team);
+        if (this.gender == L_Gender.MIXTO) {
+            // Si la competición es de género mixto, se acepta cualquier equipo.
+            teams.add(team);
+        } else if (this.gender == L_Gender.FEMENINO) {
+            // Si la competición es femenina, se verifica si el equipo también es femenino.
+            if (team.getGender() == 1) {
+                teams.add(team);
+            }
+        } else if (this.gender == L_Gender.MASCULINO) {
+            // Si la competición es masculina, se verifica si el equipo también es masculino.
+            if (team.getGender() == 0) {
+                teams.add(team);
+            }
+        } else{
+            System.out.println("El equipo no cumple con el género de la competición.");
+        }
     }
 
     public void generateMatches() {
@@ -35,12 +49,19 @@ public class League {
                 if (i != j){
                     Match match1 = new Match(teams.get(i), teams.get(j));
                     matches.add(match1); 
+                    numMatches++;
                 }
                 
             }
         }
     }
-
+    
+    public void printRounds(){
+        for (Match m : matches) {
+            System.out.println(m.getHomeTeam().getName() + " - " + m.getAwayTeam().getName());
+        }
+    }
+    
     public void simulateMatches() {
         for (Match match : matches) {
             match.simulateMatch();
@@ -50,8 +71,9 @@ public class League {
     }
 
     public void printMatches(){
+        System.out.println("Resultados de LaLiga: " );
         for (Match m : matches) {
-            System.out.println("Resultado: " + m.getHomeTeam() + " " + m.getHomeGoals() + " - " + m.getAwayGoals());
+            System.out.println(m.getHomeTeam().getName() + " " + m.getHomeGoals() + " - " + m.getAwayGoals() + " " + m.getAwayTeam().getName());
         }
     }
 

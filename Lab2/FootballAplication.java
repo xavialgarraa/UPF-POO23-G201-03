@@ -6,10 +6,6 @@ public class FootballAplication {
         Country portugal = new Country("Portugal");
         Country brasil = new Country("Brasil");
         Country francia = new Country("Francia");
-        Country polonia = new Country("Polonia");
-        Country estadosUnidos = new Country("Estados Unidos");
-        Country australia = new Country("Australia");
-        Country dinamarca = new Country("Dinamarca");
         Country holanda = new Country("Holanda");
         Country alemania = new Country("Alemania");
         Country uruguay = new Country("Uruguay");
@@ -28,12 +24,12 @@ public class FootballAplication {
         Country peru = new Country("Perú");
         Country ghana = new Country("Ghana");
 
-        // Jugadores masculinos 
+        /*// Jugadores masculinos 
         Player jugador1 = new Player(false, "Messi", 34, argentina);
         Player jugador2 = new Player(false, "Ronaldo", 36, portugal);
         Player jugador3 = new Player(false, "Neymar", 29, brasil);
         Player jugador4 = new Player(false, "Mbappé", 22, francia);
-        Player jugador5 = new Player(false, "Lewandowski", 33, polonia);
+        Player jugador5 = new Player(false, "Lewandowski", 33, polonia);*/
 
         //Jugadores Barça 
         Player FCB1 = new Player(false, "Ter Stegen" , 31, alemania); 
@@ -191,7 +187,7 @@ public class FootballAplication {
         Player RAY10 = new Player(false, "Andrés Martín", 23, espanya);
         Player RAY11 = new Player(false, "Sergio Arribas", 21, espanya);
 
-        // Jugadoras femeninas 
+        /*// Jugadoras femeninas 
         Player jugadora1 = new Player(true, "Marta", 35, brasil);
         Player jugadora2 = new Player(true, "Alex Morgan", 32, estadosUnidos);
         Player jugadora3 = new Player(true, "Carli Lloyd", 39, estadosUnidos);
@@ -201,7 +197,7 @@ public class FootballAplication {
         //Agregar equipos
         Team t1 = new Team("FC Barcelona",espanya , Team.Gender.MASCULINO);
         Team t2 = new Team("C.D.Tacón",espanya , Team.Gender.FEMENINO);
-        Team t3 = new Team("C.F.Igualtat",brasil , Team.Gender.MIXTO);
+        Team t3 = new Team("C.F.Igualtat",brasil , Team.Gender.MIXTO);*/
         
         //Equipos liga española
         Team FCB = new Team("FC Barcelona", espanya, Team.Gender.MASCULINO);
@@ -383,16 +379,9 @@ public class FootballAplication {
 
         LALIGA.printTeams();
         LALIGA.generateMatches();
+        LALIGA.printRounds();
         LALIGA.simulateMatches();
         LALIGA.printMatches();
-
-
-
-        // Actualizar estadísticas de los jugadores después de un partido
-        jugador1.updateStatistics(6, 41, 4, 1, 0); // 2 goles, 3 pases, 1 asistencia, 0 tackles, 2 tiros a puerta
-        jugador2.updateStatistics(1, 28, 8, 0, 1); // 1 gol, 4 pases, 0 asistencias, 0 tackles, 0 tiros a puerta
-        jugadora1.updateStatistics(9, 72, 0, 0, 0); // 0 goles, 2 pases, 0 asistencias, 0 tackles, 0 tiros a puerta
-
 
     }
     

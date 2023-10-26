@@ -83,8 +83,8 @@ public class Team {
         return country.getName();
     }
 
-    public String getGender() {
-        return gender.name(); // Obtener el nombre del enum como una cadena
+    public int getGender() {
+        return gender.ordinal(); // Obtener el nombre del enum como un int
     }
 
     public LinkedList<Player> getPlayers() {
