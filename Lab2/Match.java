@@ -22,10 +22,7 @@ public class Match {
         awayGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo visitante (0-6)
         // Verificar si los equipos no son nulos antes de simular los goles
         if (homeTeam != null && awayTeam != null) {
-            System.out.println("Cantidad de jugadores en el equipo local: " + homeTeam.getPlayers().size());
-            System.out.println("Cantidad de jugadores en el equipo visitante: " + awayTeam.getPlayers().size());
-
-        // Simulate home team's goals and goal scorers
+            // Simulate home team's goals and goal scorers
             for (int i = 0; i < homeGoals && !this.homeTeam.getPlayers().isEmpty(); i++) {
                 int randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
                 Player scorer = homeTeam.getPlayers().get(randomGoalIndex);

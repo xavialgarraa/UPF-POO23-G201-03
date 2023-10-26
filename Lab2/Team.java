@@ -57,7 +57,7 @@ public class Team {
         players.remove(player);
     }
 
-    /*/ Método para actualizar las estadísticas del equipo después de un partido
+    // Método para actualizar las estadísticas del equipo después de un partido
     public void updateStatistics(int goals_s, int goals_a) {
         this.matchesPlayed++;
         this.goalsScored += goals_s;
@@ -72,7 +72,7 @@ public class Team {
         } else {
             this.losses++;
         }
-    }*/
+    }
 
     // Getters para los atributos del equipo
     public String getName() {
@@ -139,7 +139,7 @@ public class Team {
                 this.ties++;
             } 
         }
-        if (this.name == m.getAwayTeam().getName()) {
+        else if (this.name == m.getAwayTeam().getName()) {
             this.matchesPlayed++;
             this.goalsScored += m.getAwayGoals();
             this.goalsAgainst += m.getHomeGoals();
