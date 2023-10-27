@@ -72,13 +72,22 @@ public class League {
             match.simulateMatch();
             match.getHomeTeam().updateStats(match);
             match.getAwayTeam().updateStats(match);
+            for(Player p: match.getHomeTeam().getPlayers()){
+                p.updateStatsPlayers();
+
+            }
+            for(Player p: match.getAwayTeam().getPlayers()){
+                p.updateStatsPlayers();
+
+            }
         }
     }
 
     public void printMatches(){
-        System.out.println("Resultados de LaLiga: " );
+        System.out.println("Resultados de LaLiga: \n" );
         for (Match m : matches) {
-            System.out.println(m.getHomeTeam().getName() + " " + m.getHomeGoals() + " - " + m.getAwayGoals() + " " + m.getAwayTeam().getName());
+            System.out.println("\n");
+            m.printmatch();
         }
     }
 
@@ -118,32 +127,7 @@ public class League {
         return matches;
     }
     
-    /*public void printLeagueTable() {
-        / Implement logic to print the league table.
-             Collections.sort(allTeams, new Comparator<Team>() {
-            public int compare(Team t1, Team t2) {
-                // Implement sorting logic based on points and goal difference
-                int comparePoints = Integer.compare(t2.getPoints(), t1.getPoints());
-    
-                if (comparePoints == 0) {
-                    // If points are equal, compare by goal difference
-                    int goalDifference1 = t1.getGoalsScored() - t1.getGoalsAgainst();
-                    int goalDifference2 = t2.getGoalsScored() - t2.getGoalsAgainst();
-                    int compareGoalDifference = Integer.compare(goalDifference2, goalDifference1);
-    
-                    if (compareGoalDifference == 0) {
-                        // If goal difference is also equal, compare by the number of goals scored
-                        int compareGoalsScored = Integer.compare(t2.getGoalsScored(), t1.getGoalsScored());
-                        return compareGoalsScored;
-                    }
-    
-                    return compareGoalDifference;
-                }
-    
-                return comparePoints;
-            }
-        });
-        
+    /*public void printLeagueTable() {        
     }*/
 
     public void printTopScorers() {

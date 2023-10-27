@@ -159,7 +159,7 @@ public class Team {
 
 
     public void PrintStats(){
-        System.out.println("\nInformación del equipo 1:");
+        System.out.println("\nInformación del equipo:");
         System.out.println("Nombre: " + getName());
         System.out.println("País: " + getCountry());
         System.out.println("Género: " + getGenderStr());

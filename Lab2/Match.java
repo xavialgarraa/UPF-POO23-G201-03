@@ -20,23 +20,41 @@ public class Match {
         Random random = new Random();
         homeGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
         awayGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo visitante (0-6)
+        int newrandomAsistIndex;
+        int randomAsistIndex;
+        int randomGoalIndex;
         // Verificar si los equipos no son nulos antes de simular los goles
         if (homeTeam != null && awayTeam != null) {
             // Simulate home team's goals and goal scorers
             for (int i = 0; i < homeGoals && !this.homeTeam.getPlayers().isEmpty(); i++) {
-                int randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
+                randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
                 Player scorer = homeTeam.getPlayers().get(randomGoalIndex);
                 homeScorers.add(scorer);
-                scorer.marcarGol(); // Actualiza estadísticas del jugador
+                scorer.marcarGol();; // Actualiza estadísticas del jugador
+                randomAsistIndex = random.nextInt(homeTeam.getPlayers().size());
+                Player asistPlayer = homeTeam.getPlayers().get(randomAsistIndex);
+                while(scorer.getName() == asistPlayer.getName()){
+                    newrandomAsistIndex = random.nextInt(homeTeam.getPlayers().size());
+                    asistPlayer = homeTeam.getPlayers().get(newrandomAsistIndex);
+                }
+                asistPlayer.asistir();
             }
     
             // Simulate away team's goals and goal scorers
             for (int i = 0; i < awayGoals && !awayTeam.getPlayers().isEmpty(); i++) {
-                int randomGoalIndex = random.nextInt(awayTeam.getPlayers().size());
+                randomGoalIndex = random.nextInt(awayTeam.getPlayers().size());
                 Player scorer = awayTeam.getPlayers().get(randomGoalIndex);
                 awayScorers.add(scorer);
                 scorer.marcarGol(); // Actualiza estadísticas del jugador
+                randomAsistIndex = random.nextInt(awayTeam.getPlayers().size());
+                Player asistPlayer = awayTeam.getPlayers().get(randomAsistIndex);
+                while(scorer.getName() == asistPlayer.getName()){
+                    newrandomAsistIndex = random.nextInt(awayTeam.getPlayers().size());
+                    asistPlayer = awayTeam.getPlayers().get(newrandomAsistIndex);
+                }
+                asistPlayer.asistir();
             }
+            
         }
     }
 
@@ -65,7 +83,17 @@ public class Match {
         return homeTeam;
     }
 
-
+    public void printmatch(){
+        System.out.println(getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
+        System.out.println("------------------------------------");
+        System.out.println("Crónica: ");
+        for (Player p: homeScorers){
+            System.out.println("Gol "+ getHomeTeam().getName() + "--> "+ p.getName());
+        }
+        for (Player p: awayScorers){
+            System.out.println("Gol "+ getAwayTeam().getName() + "--> "+ p.getName());
+        }
+    }
 
 }
 
