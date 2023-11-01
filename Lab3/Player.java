@@ -2,12 +2,12 @@ import java.util.Random;
 
 public class Player {
     // Instance variables
-    private boolean gender;
-    private String name;
-    private int age;
-    public Country nationality;
-    private int matchesPlayed;
-    private int goals;
+    protected boolean gender;
+    protected String name;
+    protected int age;
+    protected Country nationality;
+    protected int matchesPlayed;
+    protected int goals;
 
     // Constructor
     public Player(boolean gender, String name, int age, Country nationality) {
@@ -20,10 +20,6 @@ public class Player {
     // Method to update player's statistics after a match
     public void updateStatistics(int tackles, int passes, int shots, int assists, int goals) {
         this.matchesPlayed++;
-        this.tackles += tackles;
-        this.passes += passes;
-        this.shots += shots;
-        this.assists += assists;
         this.goals += goals;
     }
 
@@ -50,21 +46,6 @@ public class Player {
         return matchesPlayed;
     }
 
-    public int getTackles() {
-        return tackles;
-    }
-
-    public int getPasses() {
-        return passes;
-    }
-
-    public int getShots() {
-        return shots;
-    }
-
-    public int getAssists() {
-        return assists;
-    }
 
     public int getGoals() {
         return goals;
