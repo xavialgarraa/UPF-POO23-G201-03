@@ -55,18 +55,7 @@ public class Player {
         this.goals++;
     }
 
-    public void asistir(){
-        this.assists++;
-    }
 
-    public void updateStatsPlayers(){
-        Random random = new Random();
-        this.matchesPlayed++;
-        this.shots += random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
-        this.tackles += random.nextInt(20);
-        this.passes += random.nextInt(50);
-    }
-    
     public void PrintStats(){
     System.out.println("\nInformación de "+getName()+ ":");
     System.out.println("Goles: " + getGoals());
