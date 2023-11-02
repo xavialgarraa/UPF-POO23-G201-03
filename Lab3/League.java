@@ -5,47 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class League {
+public class League extends Competition{
     
-    public enum L_Gender {
-        MASCULINO,
-        FEMENINO,
-        MIXTO
-    }
-    private String name;
-    private Country country;
-    private League.L_Gender gender;
-    private LinkedList<Team> teams;
-    private int numMatches;
-    private LinkedList<Match> matches;
-
-    public League(String name, Country country, L_Gender gender) {
-        this.name = name;
-        this.country = country;
-        this.gender = gender;
-        this.numMatches = 0;
-        this.teams = new LinkedList<Team>();
-        this.matches = new LinkedList<Match>();
-
-    }
-
-    public void addTeam(Team team) {
-        if (this.gender == L_Gender.MIXTO) {
-            // Si la competición es de género mixto, se acepta cualquier equipo.
-            teams.add(team);
-        } else if (this.gender == L_Gender.FEMENINO) {
-            // Si la competición es femenina, se verifica si el equipo también es femenino.
-            if (team.getGender() == 1) {
-                teams.add(team);
-            }
-        } else if (this.gender == L_Gender.MASCULINO) {
-            // Si la competición es masculina, se verifica si el equipo también es masculino.
-            if (team.getGender() == 0) {
-                teams.add(team);
-            }
-        } else{
-            System.out.println("El equipo no cumple con el género de la competición.");
-        }
+    public League(String name, Country country, L_Gender gender, boolean clubs) {
+        super(name, country, gender, clubs);
     }
 
     public void generateMatches() {
@@ -54,7 +17,6 @@ public class League {
                 if (i != j){
                     Match match1 = new Match(teams.get(i), teams.get(j));
                     matches.add(match1); 
-                    numMatches++;
                 }
                 
             }
@@ -66,120 +28,9 @@ public class League {
             System.out.println(m.getHomeTeam().getName() + " - " + m.getAwayTeam().getName());
         }
     }
-    
-    public void simulateMatches() {
-        for (Match match : matches) {
-            match.simulateMatch();
-            match.getHomeTeam().updateStats(match);
-            match.getAwayTeam().updateStats(match);
-            for(Player p: match.getHomeTeam().getPlayers()){
-                p.updateStatsPlayers();
 
-            }
-            for(Player p: match.getAwayTeam().getPlayers()){
-                p.updateStatsPlayers();
-
-            }
-        }
-    }
-
-    public void printMatches(){
-        System.out.println("Resultados de LaLiga: \n" );
-        for (Match m : matches) {
-            System.out.println("\n");
-            m.printmatch();
-        }
-    }
-
-    // Implement simulateMatch method for simulating individual matches.
-    public void simulateSingleMatches(Match m) {
-        m.simulateMatch();
-        m.getHomeTeam().updateStats(m);
-        m.getAwayTeam().updateStats(m);
+    public void printLeagueTable(){
+        //falta fer
     }
     
-    public void printSingleMatches(Match m){
-        System.out.println("Resultado: " + m.getHomeTeam() + " " + m.getHomeGoals() + " - " + m.getAwayGoals());
-            
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public L_Gender getGender() {
-        return gender;
-    }
-
-    public LinkedList<Team> getTeams() {
-        return teams;
-    }
-
-    public int getNumMatches() {
-        return numMatches;
-    }
-
-    public LinkedList<Match> getMatches() {
-        return matches;
-    }
-    
-    /*public void printLeagueTable() {        
-    }*/
-
-    public void printTopScorers() {
-        System.out.println("\nTop Scorers for " + name);
-        System.out.println("-------------------------------");
-    
-        // Create a list of all players who scored in any match
-        List<Player> allScorers = new LinkedList<>();
-        Set<Player> addedPlayers = new HashSet<>();
-    
-        // Add home scorers from all matches
-        for (Match match : matches) {
-            for (Player homeScorer : match.getHomeScorers()) {
-                if (addedPlayers.add(homeScorer)) {
-                    allScorers.add(homeScorer);
-               }
-           }
-        }
-        
-            // Add away scorers from all matches
-        for (Match match : matches) {
-            for (Player awayScorer : match.getAwayScorers()) {
-                if (addedPlayers.add(awayScorer)) {
-                    allScorers.add(awayScorer);
-                }
-            }
-        }
-    
-        // Sort the players based on their goal-scoring statistics
-        Collections.sort(allScorers, new Comparator<Player>() {
-            public int compare(Player player1, Player player2) {
-                // Compare by goals scored
-                return Integer.compare(player2.getGoals(), player1.getGoals());
-            }
-        });
-    
-        // Print the top scorers
-        int count = 1;
-        for (Player player : allScorers) {
-            if (count >= 11) {
-                break; // Print only the top 10 scorers
-            }
-            System.out.println(count+". "+ player.getName() + " - Goals: " + player.getGoals());
-            count++;
-        }
-    }
-    
-    
-    
-    public void printTeams(){
-        for (Team t: teams){
-            System.out.println(t.getName());
-        }
-    }
-}
+  }

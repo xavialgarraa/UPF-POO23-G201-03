@@ -8,17 +8,17 @@ public class Team {
     }
     
     // Atributos de instancia
-    private String name;
-    private Country country;
-    private Gender gender;
-    private LinkedList<Player> players;
-    private int matchesPlayed;
-    private int wins;
-    private int ties;
-    private int losses;
-    private int goalsScored;
-    private int goalsAgainst;
-    private int points;
+    protected String name;
+    protected Country country;
+    protected Gender gender;
+    protected LinkedList<Player> players;
+    protected int matchesPlayed;
+    protected int wins;
+    protected int ties;
+    protected int losses;
+    protected int goalsScored;
+    protected int goalsAgainst;
+    protected int points;
 
     // Constructor
     public Team(String name, Country country, Gender gender) {

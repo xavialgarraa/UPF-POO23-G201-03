@@ -17,12 +17,6 @@ public class Player {
         this.nationality = nationality;
     }
 
-    // Method to update player's statistics after a match
-    public void updateStatistics(int tackles, int passes, int shots, int assists, int goals) {
-        this.matchesPlayed++;
-        this.goals += goals;
-    }
-
     // Getters for player attributes
     public boolean getGender() {
             return gender; // Retorna gender
@@ -56,10 +50,4 @@ public class Player {
     }
 
 
-    public void PrintStats(){
-    System.out.println("\nInformación de "+getName()+ ":");
-    System.out.println("Goles: " + getGoals());
-    System.out.println("Pases: " + getPasses());
-    System.out.println("Asistencias: " + getAssists());
-    System.out.println("Entradas: " + getTackles());}
 }
