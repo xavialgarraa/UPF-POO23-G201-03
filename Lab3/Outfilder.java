@@ -10,12 +10,13 @@ public class Outfilder extends Player{
         super(gender, name, age, nationality);
     }
     
-    public void updateStadistics(){
+    public void updateStats(Match m){
+        super.updateStats(m); // Actualiza el número de partidos jugados desde la clase base      
         Random random = new Random();
-        this.matchesPlayed++;
         this.shots += random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
         this.tackles += random.nextInt(20);
         this.passes += random.nextInt(50);
+        this.assists += random.nextInt(1);
     }
 
     public int getTackles() {

@@ -30,21 +30,38 @@ public class Competition {
     }
 
     public void addTeam(Team team) {
-        if (this.gender == L_Gender.MIXTO) {
+        if (clubs){
+            if (team.country.equals(this.country)){
+                if (this.gender == L_Gender.MIXTO) {
+                    // Si la competición es de género mixto, se acepta cualquier equipo.
+                    teams.add(team);
+                } else if (this.gender == L_Gender.FEMENINO) {
+                    // Si la competición es femenina, se verifica si el equipo también es femenino.
+                    if (team.getGender() == 1) {
+                        teams.add(team);
+                    }
+                } else if (this.gender == L_Gender.MASCULINO) {
+                    // Si la competición es masculina, se verifica si el equipo también es masculino.
+                    if (team.getGender() == 0) {
+                    teams.add(team);
+                }   
+            }else {System.out.println("El equipo no cumple con el género de la competición.");}
+            }else{System.out.println("El equipo no cumple con el país de la competición.");}
+        }else{
+            if (this.gender == L_Gender.MIXTO) {
             // Si la competición es de género mixto, se acepta cualquier equipo.
-            teams.add(team);
-        } else if (this.gender == L_Gender.FEMENINO) {
+                teams.add(team);
+            } else if (this.gender == L_Gender.FEMENINO) {
             // Si la competición es femenina, se verifica si el equipo también es femenino.
-            if (team.getGender() == 1) {
-                teams.add(team);
-            }
-        } else if (this.gender == L_Gender.MASCULINO) {
-            // Si la competición es masculina, se verifica si el equipo también es masculino.
-            if (team.getGender() == 0) {
-                teams.add(team);
-            }
-        } else{
-            System.out.println("El equipo no cumple con el género de la competición.");
+                if (team.getGender() == 1) {
+                    teams.add(team);
+                }
+            } else if (this.gender == L_Gender.MASCULINO) {
+                // Si la competición es masculina, se verifica si el equipo también es masculino.
+                if (team.getGender() == 0) {
+                    teams.add(team);
+                }        
+            } else{ System.out.println("El equipo no cumple con el género de la competición.");}
         }
     }
 
@@ -72,14 +89,6 @@ public class Competition {
             match.simulateMatch();
             match.getHomeTeam().updateStats(match);
             match.getAwayTeam().updateStats(match);
-            for(Player p: match.getHomeTeam().getPlayers()){
-                p.updateStatsPlayers();
-
-            }
-            for(Player p: match.getAwayTeam().getPlayers()){
-                p.updateStatsPlayers();
-
-            }
         }
     }
 

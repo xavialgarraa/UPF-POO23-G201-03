@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Player {
     // Instance variables
     protected boolean gender;
@@ -49,5 +47,16 @@ public class Player {
         this.goals++;
     }
 
+    public void updateStats(Match m){
+        this.matchesPlayed++;
+    }
+
+    public boolean equals(Object o){
+        if(o instanceof Player){
+            Player c = (Player)o;
+            return name == c.name;
+        }
+        else return false;
+    }
 
 }

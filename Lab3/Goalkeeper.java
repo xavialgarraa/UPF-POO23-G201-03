@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Goalkeeper extends Player {
         private int saves;
         private int goalsAgainst;
@@ -9,10 +11,24 @@ public class Goalkeeper extends Player {
         
         }
 
-        public void updateStats(){
-            this.saves += saves; //random
-            this.goalsAgainst += goalsAgainst;
+        public void updateStats(Match m){
+            super.updateStats(m); // Actualiza el número de partidos jugados desde la clase base            
+            Random random = new Random();
+            this.matchesPlayed++;
+            this.saves += random.nextInt(7); 
+            for (Player players : m.getAwayTeam().players){
+                if (players.name == this.name){
+                    this.goalsAgainst += m.getHomeGoals();
+                }
+            }
+            for (Player players : m.getHomeTeam().players){
+                if (players.name == this.name){
+                    this.goalsAgainst += m.getAwayGoals();
+                }
+            }
+            
         }
+        
         public void PrintStats(){
             System.out.println("\nInformación de "+getName()+ ":");
             System.out.println("Goles: " + getGoals());

@@ -14,7 +14,7 @@ public class NationalTeam extends Team{
         System.out.println(player.getNationality()+" player.getNationality()");
 
         
-        if (this.country.getName() == player.getNationality()){//POODEM CRIDAR LA NOVA FUNCIÓ DE COUNTRY, MIRAR
+        if (player.nationality.equals(this.country)){//POODEM CRIDAR LA NOVA FUNCIÓ DE COUNTRY, MIRAR
             // Verificar si el jugador es del mismo género que el equipo
             if (this.gender == Gender.MIXTO) {
                 players.add(player);
