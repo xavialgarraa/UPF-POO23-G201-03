@@ -6,14 +6,12 @@ public class NationalTeam extends Team{
 
     public NationalTeam(String name, Country country, Gender gender){
         super(name, country, gender);
-        this.players = new LinkedList<>();
-        
+        this.players = new LinkedList<Player>();  
     }
+
     public void addPlayer(Player player){
         System.out.println(this.country.getName()+" (this.country.getName()");
-        System.out.println(player.getNationality()+" player.getNationality()");
-
-        
+        System.out.println(player.getNationality()+" player.getNationality()");      
         if (player.nationality.equals(this.country)){//POODEM CRIDAR LA NOVA FUNCIÓ DE COUNTRY, MIRAR
             // Verificar si el jugador es del mismo género que el equipo
             if (this.gender == Gender.MIXTO) {

@@ -31,7 +31,7 @@ public class Competition {
 
     public void addTeam(Team team) {
         if (clubs){
-            if (team.country.equals(this.country)){
+            if (team.getCountry().equals(this.country)){
                 if (this.gender == L_Gender.MIXTO) {
                     // Si la competición es de género mixto, se acepta cualquier equipo.
                     teams.add(team);
@@ -93,7 +93,7 @@ public class Competition {
     }
 
     public void printMatches(){
-        System.out.println("Resultados de LaLiga: \n" );
+        System.out.println("Resultados de"+ name +": \n" );
         for (Match m : matches) {
             System.out.println("\n");
             m.printmatch();

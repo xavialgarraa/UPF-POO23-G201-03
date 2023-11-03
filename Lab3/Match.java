@@ -40,14 +40,14 @@ public class Match {
             }
             
         }
-        for (Player players:this.homeTeam.players){
+        for (Player players:this.homeTeam.getPlayers()){
             if(players instanceof Goalkeeper){
                 ((Goalkeeper)players).updateStats(this);
             }else{
                 ((Outfilder)players).updateStats(this);
             }
         }
-        for (Player players:this.awayTeam.players){
+        for (Player players:this.awayTeam.getPlayers()){
             if(players instanceof Goalkeeper){
                 ((Goalkeeper)players).updateStats(this);
             }else{

@@ -27,8 +27,10 @@ public class CupMatch extends Match{
 
     public void simulateExtraTime(){
         Random random = new Random();
-        homeGoals += random.nextInt(3); // Genera un número aleatorio de goles para el equipo local (0-3)
-        awayGoals += random.nextInt(3); // Genera un número aleatorio de goles para el equipo visitante (0-3)
+        int homeGoalsProrroga = random.nextInt(3);
+        int awayGoalsProrroga = random.nextInt(3);
+        homeGoals += homeGoalsProrroga; // Genera un número aleatorio de goles para el equipo local (0-3)
+        awayGoals += awayGoalsProrroga; // Genera un número aleatorio de goles para el equipo visitante (0-3)
         int randomGoalIndex;
         // Verificar si los equipos no son nulos antes de simular los goles
         if (homeTeam != null && awayTeam != null) {
@@ -66,6 +68,23 @@ public class CupMatch extends Match{
             if (awayScorers){
                 awayGoals++;
             }
+        }
+    }
+    public void printmatch(){
+        System.out.println(getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
+        System.out.println("------------------------------------");
+        System.out.println("Crónica del Partido: ");
+        for (Player p: homeScorers){
+            System.out.println("Gol "+ getHomeTeam().getName() + "--> "+ p.getName());
+        }
+        for (Player p: awayScorers){
+            System.out.println("Gol "+ getAwayTeam().getName() + "--> "+ p.getName());
+        }
+        if (prorroga){
+            System.out.println("El partido finalizó en los primeros 90 minutos en empate\n");
+        }
+        if (penalties){
+            System.out.println("El partido finalizó en los primeros 120 minutos en empate, decidido en la tanda de penaltis\n");
         }
     }
 }

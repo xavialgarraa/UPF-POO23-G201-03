@@ -1,10 +1,3 @@
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
 public class League extends Competition{
     
     public League(String name, Country country, L_Gender gender, boolean clubs) {

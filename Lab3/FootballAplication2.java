@@ -24,13 +24,6 @@ public class FootballAplication2 {
         Country peru = new Country("Perú");
         Country ghana = new Country("Ghana");
 
-        /*// Jugadores masculinos 
-        Player jugador1 = new Player(false, "Messi", 34, argentina);
-        Player jugador2 = new Player(false, "Ronaldo", 36, portugal);
-        Player jugador3 = new Player(false, "Neymar", 29, brasil);
-        Player jugador4 = new Player(false, "Mbappé", 22, francia);
-        Player jugador5 = new Player(false, "Lewandowski", 33, polonia);*/
-
         //Jugadores Barça 
         Player FCB1 = new Goalkeeper(false, "Ter Stegen" , 31, alemania); 
         Player FCB2 = new Player(false, "Piqué", 34, espanya);
@@ -187,18 +180,6 @@ public class FootballAplication2 {
         Player RAY10 = new Player(false, "Andrés Martín", 23, espanya);
         Player RAY11 = new Player(false, "Sergio Arribas", 21, espanya);
 
-        /*// Jugadoras femeninas 
-        Player jugadora1 = new Player(true, "Marta", 35, brasil);
-        Player jugadora2 = new Player(true, "Alex Morgan", 32, estadosUnidos);
-        Player jugadora3 = new Player(true, "Carli Lloyd", 39, estadosUnidos);
-        Player jugadora4 = new Player(true, "Sam Kerr", 28, australia);
-        Player jugadora5 = new Player(true, "Pernille Harder", 29, dinamarca);
-  
-        //Agregar equipos
-        Team t1 = new Team("FC Barcelona",espanya , Team.Gender.MASCULINO);
-        Team t2 = new Team("C.D.Tacón",espanya , Team.Gender.FEMENINO);
-        Team t3 = new Team("C.F.Igualtat",brasil , Team.Gender.MIXTO);*/
-        
         //Equipos liga española
         Team FCB = new Team("FC Barcelona", espanya, Team.Gender.MASCULINO);
         Team ATM = new Team("Atlético de Madrid", espanya, Team.Gender.MASCULINO);
