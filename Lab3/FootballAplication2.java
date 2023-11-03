@@ -369,10 +369,11 @@ public class FootballAplication2 {
 
 
         //Crear liga
-        //League LALIGA = new League("LA LIGA EA SPORTS", espanya, League.L_Gender.MASCULINO);
+        League LALIGA = new League("LA LIGA EA SPORTS", espanya, League.L_Gender.MASCULINO, true);
+        
 
         //Añadir equipos a la liga
-        /*  LALIGA.addTeam(FCB);
+        LALIGA.addTeam(FCB);
         LALIGA.addTeam(RM);
         LALIGA.addTeam(ATM);
         LALIGA.addTeam(VAL);
@@ -385,7 +386,21 @@ public class FootballAplication2 {
         LALIGA.addTeam(RAY);
         LALIGA.addTeam(ATH);
 
-        /*LALIGA.printTeams();
+        Cup COPA_DEL_REY = new Cup("Copa del rey", espanya, League.L_Gender.MASCULINO, true);
+
+        COPA_DEL_REY.addTeam(BET);
+        COPA_DEL_REY.addTeam(GIR);
+        COPA_DEL_REY.addTeam(CEL);
+        COPA_DEL_REY.addTeam(RAY);
+        //COPA_DEL_REY.addTeam(ATH);
+
+        COPA_DEL_REY.getNumTeams();
+        COPA_DEL_REY.generateMatches();
+        COPA_DEL_REY.simulateTournament();
+
+
+
+        LALIGA.printTeams();
         LALIGA.generateMatches();
         LALIGA.printRounds();
        
@@ -394,7 +409,7 @@ public class FootballAplication2 {
         LALIGA.printMatches();
         FCB.PrintStats();
         LALIGA.printTopScorers();
-        RM9.PrintStats();/* */
+        //RM9.PrintStats();
 
     }
     
