@@ -9,6 +9,7 @@ public class Country {
         return name;
     
     }
+    
     public boolean equals(Object o){
         if(o instanceof Country){
             Country c = (Country)o;
