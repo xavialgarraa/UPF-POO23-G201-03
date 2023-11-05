@@ -25,160 +25,161 @@ public class FootballAplication2 {
         Country ghana = new Country("Ghana");
 
         //Jugadores Barça 
-        Player FCB1 = new Goalkeeper(false, "Ter Stegen" , 31, alemania); 
-        Player FCB2 = new Player(false, "Piqué", 34, espanya);
-        Player FCB3 = new Player(false, "Jordi Alba", 32, espanya);
-        Player FCB4 = new Player(false, "Sergio Busquets", 33, espanya);
-        Player FCB5 = new Player(false, "Frenkie de Jong", 24, holanda);
-        Player FCB6 = new Player(false, "Sergi Roberto", 29, espanya);
-        Player FCB7 = new Player(false, "Ansu Fati", 18, espanya);
-        Player FCB8 = new Player(false, "Lionel Messi", 34, argentina);
-        Player FCB9 = new Player(false, "Ousmane Dembélé", 24, francia);
-        Player FCB10 = new Player(false, "Ronald Araújo", 22, uruguay);
-        Player FCB11 = new Player(false, "Pedri", 18, espanya);
+        Goalkeeper FCB1 = new Goalkeeper(false, "Ter Stegen" , 31, alemania); 
+        Outfilder FCB2 = new Outfilder(false, "Piqué", 34, espanya);
+        Outfilder FCB3 = new Outfilder(false, "Jordi Alba", 32, espanya);
+        Outfilder FCB4 = new Outfilder(false, "Sergio Busquets", 33, espanya);
+        Outfilder FCB5 = new Outfilder(false, "Frenkie de Jong", 24, holanda);
+        Outfilder FCB6 = new Outfilder(false, "Sergi Roberto", 29, espanya);
+        Outfilder FCB7 = new Outfilder(false, "Ansu Fati", 18, espanya);
+        Outfilder FCB8 = new Outfilder(false, "Lionel Messi", 34, argentina);
+        Outfilder FCB9 = new Outfilder(false, "Ousmane Dembélé", 24, francia);
+        Outfilder FCB10 = new Outfilder(false, "Ronald Araújo", 22, uruguay);
+        Outfilder FCB11 = new Outfilder(false, "Pedri", 18, espanya);
 
-        //Jugadores Real Madrid
-        Player RM1 = new Player(false, "Courtois", 29, belgica);
-        Player RM2 = new Player(false, "Carvajal", 30, espanya);
-        Player RM3 = new Player(false, "Sergio Ramos", 35, espanya);
-        Player RM4 = new Player(false, "Varane", 28, francia);
-        Player RM5 = new Player(false, "Marcelo", 33, brasil);
-        Player RM6 = new Player(false, "Casemiro", 29, brasil);
-        Player RM7 = new Player(false, "Kroos", 31, alemania);
-        Player RM8 = new Player(false, "Modric", 35, croacia);
-        Player RM9 = new Player(false, "Vinicius Jr.", 21, brasil);
-        Player RM10 = new Player(false, "Benzema", 33, francia);
-        Player RM11 = new Player(false, "Asensio", 25, espanya);
 
-        //Jugadores Atlético de Madrid
-        Player ATM1 = new Player(false, "Oblak", 28, eslovenia);
-        Player ATM2 = new Player(false, "Trippier", 31, inglaterra);
-        Player ATM3 = new Player(false, "Giménez", 26, uruguay);
-        Player ATM4 = new Player(false, "Lodi", 23, brasil);
-        Player ATM5 = new Player(false, "Koke", 29, espanya);
-        Player ATM6 = new Player(false, "Herrera", 31, mexico);
-        Player ATM7 = new Player(false, "Llorente", 26, espanya);
-        Player ATM8 = new Player(false, "Carrasco", 28, belgica);
-        Player ATM9 = new Player(false, "Suárez", 34, uruguay);
-        Player ATM10 = new Player(false, "João Félix", 21, portugal);
-        Player ATM11 = new Player(false, "Correa", 26, argentina);
+        // Jugadores Real Madrid
+        Goalkeeper RM1 = new Goalkeeper(false, "Courtois", 29, belgica);
+        Outfilder RM2 = new Outfilder(false, "Carvajal", 30, espanya);
+        Outfilder RM3 = new Outfilder(false, "Sergio Ramos", 35, espanya);
+        Outfilder RM4 = new Outfilder(false, "Varane", 28, francia);
+        Outfilder RM5 = new Outfilder(false, "Marcelo", 33, brasil);
+        Outfilder RM6 = new Outfilder(false, "Casemiro", 29, brasil);
+        Outfilder RM7 = new Outfilder(false, "Kroos", 31, alemania);
+        Outfilder RM8 = new Outfilder(false, "Modric", 35, croacia);
+        Outfilder RM9 = new Outfilder(false, "Vinicius Jr.", 21, brasil);
+        Outfilder RM10 = new Outfilder(false, "Benzema", 33, francia);
+        Outfilder RM11 = new Outfilder(false, "Asensio", 25, espanya);
 
-        //Jugadores Real Sociedad (RS)
-        Player RS1 = new Player(false, "Remiro", 24, espanya);
-        Player RS2 = new Player(false, "Silva", 35, espanya);
-        Player RS3 = new Player(false, "Merino", 25, espanya);
-        Player RS4 = new Player(false, "Isak", 21, suecia);
-        Player RS5 = new Player(false, "Portu", 29, espanya);
-        Player RS6 = new Player(false, "Elustondo", 26, espanya);
-        Player RS7 = new Player(false, "Monreal", 35, espanya);
-        Player RS8 = new Player(false, "Guevara", 24, espanya);
-        Player RS9 = new Player(false, "Oyarzabal", 24, espanya);
-        Player RS10 = new Player(false, "Le Normand", 24, francia);
-        Player RS11 = new Player(false, "Zubeldia", 23, espanya);
+        // Jugadores Atlético de Madrid
+        Goalkeeper ATM1 = new Goalkeeper(false, "Oblak", 28, eslovenia);
+        Outfilder ATM2 = new Outfilder(false, "Trippier", 31, inglaterra);
+        Outfilder ATM3 = new Outfilder(false, "Giménez", 26, uruguay);
+        Outfilder ATM4 = new Outfilder(false, "Lodi", 23, brasil);
+        Outfilder ATM5 = new Outfilder(false, "Koke", 29, espanya);
+        Outfilder ATM6 = new Outfilder(false, "Herrera", 31, mexico);
+        Outfilder ATM7 = new Outfilder(false, "Llorente", 26, espanya);
+        Outfilder ATM8 = new Outfilder(false, "Carrasco", 28, belgica);
+        Outfilder ATM9 = new Outfilder(false, "Suárez", 34, uruguay);
+        Outfilder ATM10 = new Outfilder(false, "João Félix", 21, portugal);
+        Outfilder ATM11 = new Outfilder(false, "Correa", 26, argentina);
 
-        //Jugadores Sevilla (SEV)
-        Player SEV1 = new Player(false, "Navas", 35, espanya);
-        Player SEV2 = new Player(false, "Bounou", 29, marruecos);
-        Player SEV3 = new Player(false, "Carlos", 28, brasil);
-        Player SEV4 = new Player(false, "Koundé", 22, francia);
-        Player SEV5 = new Player(false, "Acuña", 29, argentina);
-        Player SEV6 = new Player(false, "Jordán", 26, espanya);
-        Player SEV7 = new Player(false, "Fernando", 33, brasil);
-        Player SEV8 = new Player(false, "Suso", 27, espanya);
-        Player SEV9 = new Player(false, "Papu Gómez", 33, argentina);
-        Player SEV10 = new Player(false, "Ocampos", 26, argentina);
-        Player SEV11 = new Player(false, "En-Nesyri", 24, marruecos);
+        // Jugadores Real Sociedad (RS)
+        Goalkeeper RS1 = new Goalkeeper(false, "Remiro", 24, espanya);
+        Outfilder RS2 = new Outfilder(false, "Silva", 35, espanya);
+        Outfilder RS3 = new Outfilder(false, "Merino", 25, espanya);
+        Outfilder RS4 = new Outfilder(false, "Isak", 21, suecia);
+        Outfilder RS5 = new Outfilder(false, "Portu", 29, espanya);
+        Outfilder RS6 = new Outfilder(false, "Elustondo", 26, espanya);
+        Outfilder RS7 = new Outfilder(false, "Monreal", 35, espanya);
+        Outfilder RS8 = new Outfilder(false, "Guevara", 24, espanya);
+        Outfilder RS9 = new Outfilder(false, "Oyarzabal", 24, espanya);
+        Outfilder RS10 = new Outfilder(false, "Le Normand", 24, francia);
+        Outfilder RS11 = new Outfilder(false, "Zubeldia", 23, espanya);
 
-        //Jugadores Villarreal (VIL)
-        Player VIL1 = new Player(false, "Asenjo", 31, espanya);
-        Player VIL2 = new Player(false, "Mario Gaspar", 30, espanya);
-        Player VIL3 = new Player(false, "Albiol", 35, espanya);
-        Player VIL4 = new Player(false, "Pau Torres", 23, espanya);
-        Player VIL5 = new Player(false, "Alberto Moreno", 28, espanya);
-        Player VIL6 = new Player(false, "Iborra", 32, espanya);
-        Player VIL7 = new Player(false, "Trigueros", 28, espanya);
-        Player VIL8 = new Player(false, "Moïse Kean", 20, italia);
-        Player VIL9 = new Player(false, "Gerard Moreno", 28, espanya);
-        Player VIL10 = new Player(false, "Chukwueze", 21, nigeria);
-        Player VIL11 = new Player(false, "Bacca", 34, colombia);
+        // Jugadores Sevilla (SEV)
+        Outfilder SEV1 = new Outfilder(false, "Navas", 35, espanya);
+        Goalkeeper SEV2 = new Goalkeeper(false, "Bounou", 29, marruecos);
+        Outfilder SEV3 = new Outfilder(false, "Carlos", 28, brasil);
+        Outfilder SEV4 = new Outfilder(false, "Koundé", 22, francia);
+        Outfilder SEV5 = new Outfilder(false, "Acuña", 29, argentina);
+        Outfilder SEV6 = new Outfilder(false, "Jordán", 26, espanya);
+        Outfilder SEV7 = new Outfilder(false, "Fernando", 33, brasil);
+        Outfilder SEV8 = new Outfilder(false, "Suso", 27, espanya);
+        Outfilder SEV9 = new Outfilder(false, "Papu Gómez", 33, argentina);
+        Outfilder SEV10 = new Outfilder(false, "Ocampos", 26, argentina);
+        Outfilder SEV11 = new Outfilder(false, "En-Nesyri", 24, marruecos);
 
-        //Jugadores Valencia (VAL)
-        Player VAL1 = new Player(false, "Cillessen", 31, holanda);
-        Player VAL2 = new Player(false, "Piccini", 28, italia);
-        Player VAL3 = new Player(false, "Garay", 33, argentina);
-        Player VAL4 = new Player(false, "Diakhaby", 24, francia);
-        Player VAL5 = new Player(false, "Gayà", 25, espanya);
-        Player VAL6 = new Player(false, "Kondogbia", 27, francia);
-        Player VAL7 = new Player(false, "Solá", 29, espanya);
-        Player VAL8 = new Player(false, "Carlos Soler", 23, espanya);
-        Player VAL9 = new Player(false, "Maxi Gómez", 24, uruguay);
-        Player VAL10 = new Player(false, "Kang In-lee", 19, corea);
-        Player VAL11 = new Player(false, "Gameiro", 33, francia);
+        // Jugadores Villarreal (VIL)
+        Goalkeeper VIL1 = new Goalkeeper(false, "Asenjo", 31, espanya);
+        Outfilder VIL2 = new Outfilder(false, "Mario Gaspar", 30, espanya);
+        Outfilder VIL3 = new Outfilder(false, "Albiol", 35, espanya);
+        Outfilder VIL4 = new Outfilder(false, "Pau Torres", 23, espanya);
+        Outfilder VIL5 = new Outfilder(false, "Alberto Moreno", 28, espanya);
+        Outfilder VIL6 = new Outfilder(false, "Iborra", 32, espanya);
+        Outfilder VIL7 = new Outfilder(false, "Trigueros", 28, espanya);
+        Outfilder VIL8 = new Outfilder(false, "Moïse Kean", 20, italia);
+        Outfilder VIL9 = new Outfilder(false, "Gerard Moreno", 28, espanya);
+        Outfilder VIL10 = new Outfilder(false, "Chukwueze", 21, nigeria);
+        Outfilder VIL11 = new Outfilder(false, "Bacca", 34, colombia);
 
-        //Betis
-        Player BET1 = new Player(false, "Portillo", 29, espanya);
-        Player BET2 = new Player(false, "Víctor Ruiz", 32, espanya);
-        Player BET3 = new Player(false, "Álex Moreno", 28, espanya);
-        Player BET4 = new Player(false, "Marc Bartra", 31, espanya);
-        Player BET5 = new Player(false, "Joaquín", 41, espanya);
-        Player BET6 = new Player(false, "Sergio León", 32, espanya);
-        Player BET7 = new Player(false, "William Carvalho", 29, portugal);
-        Player BET8 = new Player(false, "Guardado", 35, mexico);
-        Player BET9 = new Player(false, "Aitor Ruibal", 26, espanya);
-        Player BET10 = new Player(false, "Isco", 30, espanya);
-        Player BET11 = new Player(false, "Juanmi", 28, espanya);
+        // Jugadores Valencia (VAL)
+        Goalkeeper VAL1 = new Goalkeeper(false, "Cillessen", 31, holanda);
+        Outfilder VAL2 = new Outfilder(false, "Piccini", 28, italia);
+        Outfilder VAL3 = new Outfilder(false, "Garay", 33, argentina);
+        Outfilder VAL4 = new Outfilder(false, "Diakhaby", 24, francia);
+        Outfilder VAL5 = new Outfilder(false, "Gayà", 25, espanya);
+        Outfilder VAL6 = new Outfilder(false, "Kondogbia", 27, francia);
+        Outfilder VAL7 = new Outfilder(false, "Solá", 29, espanya);
+        Outfilder VAL8 = new Outfilder(false, "Carlos Soler", 23, espanya);
+        Outfilder VAL9 = new Outfilder(false, "Maxi Gómez", 24, uruguay);
+        Outfilder VAL10 = new Outfilder(false, "Kang In-lee", 19, corea);
+        Outfilder VAL11 = new Outfilder(false, "Gameiro", 33, francia);
 
-        //Athletic club
-        Player ATH1 = new Player(false, "Unai Simón", 25, espanya);
-        Player ATH2 = new Player(false, "Yeray", 27, espanya);
-        Player ATH3 = new Player(false, "Iñigo Martínez", 31, espanya);
-        Player ATH4 = new Player(false, "Ander Capa", 30, espanya);
-        Player ATH5 = new Player(false, "Balenziaga", 33, espanya);
-        Player ATH6 = new Player(false, "Dani García", 31, espanya);
-        Player ATH7 = new Player(false, "Williams", 27, espanya);
-        Player ATH8 = new Player(false, "Raúl García", 35, espanya);
-        Player ATH9 = new Player(false, "Berenguer", 27, espanya);
-        Player ATH10 = new Player(false, "Vencedor", 24, espanya);
-        Player ATH11 = new Player(false, "Iñaki Williams", 28, espanya);
+        // Betis
+        Goalkeeper BET1 = new Goalkeeper(false, "Cluadio Barvo", 29, espanya);
+        Outfilder BET2 = new Outfilder(false, "Víctor Ruiz", 32, espanya);
+        Outfilder BET3 = new Outfilder(false, "Álex Moreno", 28, espanya);
+        Outfilder BET4 = new Outfilder(false, "Marc Bartra", 31, espanya);
+        Outfilder BET5 = new Outfilder(false, "Joaquín", 41, espanya);
+        Outfilder BET6 = new Outfilder(false, "Sergio León", 32, espanya);
+        Outfilder BET7 = new Outfilder(false, "William Carvalho", 29, portugal);
+        Outfilder BET8 = new Outfilder(false, "Guardado", 35, mexico);
+        Outfilder BET9 = new Outfilder(false, "Aitor Ruibal", 26, espanya);
+        Outfilder BET10 = new Outfilder(false, "Isco", 30, espanya);
+        Outfilder BET11 = new Outfilder(false, "Juanmi", 28, espanya);
 
-        //Girona FC
-        Player GIR1 = new Player(false, "Jordi Mboula", 22, espanya);
-        Player GIR2 = new Player(false, "Samu Sáiz", 30, espanya);
-        Player GIR3 = new Player(false, "Aday", 35, espanya);
-        Player GIR4 = new Player(false, "Stuani", 35, uruguay);
-        Player GIR5 = new Player(false, "Kebe", 24, senegal);
-        Player GIR6 = new Player(false, "Pablo Maffeo", 24, espanya);
-        Player GIR7 = new Player(false, "Aleix Garcia", 26, espanya);
-        Player GIR8 = new Player(false, "Gumbau", 27, espanya);
-        Player GIR9 = new Player(false, "Cristhian Stuani", 33, uruguay);
-        Player GIR10 = new Player(false, "Franquesa", 25, espanya);
-        Player GIR11 = new Player(false, "Oscar Mingueza", 22, espanya);
+        // Athletic club
+        Goalkeeper ATH1 = new Goalkeeper(false, "Unai Simón", 25, espanya);
+        Outfilder ATH2 = new Outfilder(false, "Yeray", 27, espanya);
+        Outfilder ATH3 = new Outfilder(false, "Iñigo Martínez", 31, espanya);
+        Outfilder ATH4 = new Outfilder(false, "Ander Capa", 30, espanya);
+        Outfilder ATH5 = new Outfilder(false, "Balenziaga", 33, espanya);
+        Outfilder ATH6 = new Outfilder(false, "Dani García", 31, espanya);
+        Outfilder ATH7 = new Outfilder(false, "Williams", 27, espanya);
+        Outfilder ATH8 = new Outfilder(false, "Raúl García", 35, espanya);
+        Outfilder ATH9 = new Outfilder(false, "Berenguer", 27, espanya);
+        Outfilder ATH10 = new Outfilder(false, "Vencedor", 24, espanya);
+        Outfilder ATH11 = new Outfilder(false, "Iñaki Williams", 28, espanya);
 
-        //Celta de Vigo
-        Player CEL1 = new Player(false, "Iván Villar", 25, espanya);
-        Player CEL2 = new Player(false, "Joseph Aidoo", 26, ghana);
-        Player CEL3 = new Player(false, "Néstor Araujo", 30, mexico);
-        Player CEL4 = new Player(false, "Fontán", 24, espanya);
-        Player CEL5 = new Player(false, "Carlos Domínguez", 26, espanya);
-        Player CEL6 = new Player(false, "Renato Tapia", 26, peru);
-        Player CEL7 = new Player(false, "Brais Méndez", 25, espanya);
-        Player CEL8 = new Player(false, "Santi Mina", 26, espanya);
-        Player CEL9 = new Player(false, "Nolito", 35, espanya);
-        Player CEL10 = new Player(false, "Augusto Solari", 29, uruguay);
-        Player CEL11 = new Player(false, "Denis Suárez", 28, espanya);
+        // Girona FC
+        Goalkeeper GIR1 = new Goalkeeper(false, "Gazzaniga", 22, argentina);
+        Outfilder GIR2 = new Outfilder(false, "Samu Sáiz", 30, espanya);
+        Outfilder GIR3 = new Outfilder(false, "Aday", 35, espanya);
+        Outfilder GIR4 = new Outfilder(false, "Stuani", 35, uruguay);
+        Outfilder GIR5 = new Outfilder(false, "Kebe", 24, senegal);
+        Outfilder GIR6 = new Outfilder(false, "Pablo Maffeo", 24, espanya);
+        Outfilder GIR7 = new Outfilder(false, "Aleix Garcia", 26, espanya);
+        Outfilder GIR8 = new Outfilder(false, "Gumbau", 27, espanya);
+        Outfilder GIR9 = new Outfilder(false, "Cristhian Stuani", 33, uruguay);
+        Outfilder GIR10 = new Outfilder(false, "Franquesa", 25, espanya);
+        Outfilder GIR11 = new Outfilder(false, "Oscar Mingueza", 22, espanya);
 
-        //Rayo Vallecano
-        Player RAY1 = new Player(false, "Dimitrievski", 27, ghana);
-        Player RAY2 = new Player(false, "Mario Suárez", 35, espanya);
-        Player RAY3 = new Player(false, "Advíncula", 31, peru);
-        Player RAY4 = new Player(false, "Bebé", 31, portugal);
-        Player RAY5 = new Player(false, "Catena", 27, espanya);
-        Player RAY6 = new Player(false, "Isi Palazón", 26, espanya);
-        Player RAY7 = new Player(false, "Tito", 34, espanya);
-        Player RAY8 = new Player(false, "Trejo", 33, espanya);
-        Player RAY9 = new Player(false, "Álvaro García", 28, espanya);
-        Player RAY10 = new Player(false, "Andrés Martín", 23, espanya);
-        Player RAY11 = new Player(false, "Sergio Arribas", 21, espanya);
+        // Celta de Vigo
+        Goalkeeper CEL1 = new Goalkeeper(false, "Iván Villar", 25, espanya);
+        Outfilder CEL2 = new Outfilder(false, "Joseph Aidoo", 26, ghana);
+        Outfilder CEL3 = new Outfilder(false, "Néstor Araujo", 30, mexico);
+        Outfilder CEL4 = new Outfilder(false, "Fontán", 24, espanya);
+        Outfilder CEL5 = new Outfilder(false, "Carlos Domínguez", 26, espanya);
+        Outfilder CEL6 = new Outfilder(false, "Renato Tapia", 26, peru);
+        Outfilder CEL7 = new Outfilder(false, "Brais Méndez", 25, espanya);
+        Outfilder CEL8 = new Outfilder(false, "Santi Mina", 26, espanya);
+        Outfilder CEL9 = new Outfilder(false, "Nolito", 35, espanya);
+        Outfilder CEL10 = new Outfilder(false, "Augusto Solari", 29, uruguay);
+        Outfilder CEL11 = new Outfilder(false, "Denis Suárez", 28, espanya);
+
+        // Rayo Vallecano
+        Goalkeeper RAY1 = new Goalkeeper(false, "Dimitrievski", 27, ghana);
+        Outfilder RAY2 = new Outfilder(false, "Mario Suárez", 35, espanya);
+        Outfilder RAY3 = new Outfilder(false, "Advíncula", 31, peru);
+        Outfilder RAY4 = new Outfilder(false, "Bebé", 31, portugal);
+        Outfilder RAY5 = new Outfilder(false, "Catena", 27, espanya);
+        Outfilder RAY6 = new Outfilder(false, "Isi Palazón", 26, espanya);
+        Outfilder RAY7 = new Outfilder(false, "Tito", 34, espanya);
+        Outfilder RAY8 = new Outfilder(false, "Trejo", 33, espanya);
+        Outfilder RAY9 = new Outfilder(false, "Álvaro García", 28, espanya);
+        Outfilder RAY10 = new Outfilder(false, "Andrés Martín", 23, espanya);
+        Outfilder RAY11 = new Outfilder(false, "Sergio Arribas", 21, espanya);
 
         //Equipos liga española
         Team FCB = new Team("FC Barcelona", espanya, Team.Gender.MASCULINO);
@@ -368,26 +369,36 @@ public class FootballAplication2 {
         LALIGA.addTeam(ATH);
 
         Cup COPA_DEL_REY = new Cup("Copa del rey", espanya, League.L_Gender.MASCULINO, true);
+        GroupPlay CHAMPIONS = new GroupPlay("Champions League", espanya, League.L_Gender.MASCULINO, true);
 
         COPA_DEL_REY.addTeam(BET);
         COPA_DEL_REY.addTeam(GIR);
         COPA_DEL_REY.addTeam(CEL);
         COPA_DEL_REY.addTeam(RAY);
-        //COPA_DEL_REY.addTeam(ATH);
 
-        COPA_DEL_REY.getNumTeams();
-        COPA_DEL_REY.generateMatches();
-        COPA_DEL_REY.simulateTournament();
+        CHAMPIONS.addTeam(BET);
+        CHAMPIONS.addTeam(GIR);
+        CHAMPIONS.addTeam(CEL);
+        CHAMPIONS.addTeam(RAY);
 
+        //Mêtodos groupplay NO FUNCIONA PNDE DIVIDED BY 0
+        //CHAMPIONS.generateMatches();
+        // CHAMPIONS.simulateMatches();
+        
 
+        //METODOS DE COPA QUE NO FUNCIONA EL SIMULATE MATCHES
+        //COPA_DEL_REY.getNumTeams();
+        //COPA_DEL_REY.generateMatches();
+        //COPA_DEL_REY.simulateMatches();
 
+        //METODOS DE LIGA
         LALIGA.printTeams();
         LALIGA.generateMatches();
-        LALIGA.printRounds();
+        //LALIGA.printRounds();
        
-        LALIGA.generateMatches(); 
+        //LALIGA.generateMatches(); 
         LALIGA.simulateMatches();
-        LALIGA.printMatches();
+        //LALIGA.printMatches();
         FCB.PrintStats();
         LALIGA.printTopScorers();
         //RM9.PrintStats();

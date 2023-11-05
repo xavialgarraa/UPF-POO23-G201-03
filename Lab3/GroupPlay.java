@@ -7,7 +7,7 @@ public class GroupPlay extends Competition {
     private int noGroups;
     private LinkedList<League> groups;
 
-    public Group(String name, Country country, L_Gender gender, boolean clubs){
+    public GroupPlay(String name, Country country, L_Gender gender, boolean clubs){
         super(name, country, gender, clubs);
         this.noGroups = noGroups;
         this.groups =  new LinkedList<League>();
