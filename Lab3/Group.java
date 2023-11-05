@@ -31,7 +31,10 @@ public class Group extends Competition {
     }
     
     public void simulateMatches(){
-        //FER
+        for (League liga:this.groups){
+            liga.generateMatches();
+            liga.simulateMatches();
+        }
     }
 
     public void printTable(){

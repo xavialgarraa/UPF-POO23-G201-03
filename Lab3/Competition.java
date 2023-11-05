@@ -85,11 +85,6 @@ public class Competition {
     }
     
     public void simulateMatches() {
-        for (Match match : matches) {
-            match.simulateMatch();
-            match.getHomeTeam().updateStats(match);
-            match.getAwayTeam().updateStats(match);
-        }
     }
 
     public void printMatches(){

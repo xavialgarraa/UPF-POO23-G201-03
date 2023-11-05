@@ -16,6 +16,15 @@ public class League extends Competition{
         }
     }
     
+    @Override
+    public void simulateMatches(){
+        for (Match match : matches) {
+            match.simulateMatch();
+            match.getHomeTeam().updateStats(match);
+            match.getAwayTeam().updateStats(match);
+        }
+    }
+    
     public void printRounds(){
         for (Match m : matches) {
             System.out.println(m.getHomeTeam().getName() + " - " + m.getAwayTeam().getName());

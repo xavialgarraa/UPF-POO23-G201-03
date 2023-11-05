@@ -10,36 +10,37 @@ public class Cup extends Competition {
         super(name, country, gender, clubs);
         this.tr = new LinkedList<Team>();
         this.mr = new LinkedList<Match>();
-        int numTeams = getNumTeams();
         this.rounds = new Team[4][4];
     }
 
+    
     public int getNumTeams() {
         return tr.size();
     }
 
     public void generateMatches() {
+        for(Team t:teams){
+            tr.add(t);
+        }
         Collections.shuffle(tr);
         int numTeams = tr.size();
 
         if (numTeams % 2 != 0) {
-            tr.removeLast();
+            Team t = tr.removeLast();
             numTeams--;
         }
 
         for (int i = 0; i < numTeams; i += 2) {
             Team team1 = tr.get(i);
             Team team2 = tr.get(i + 1);
-            Match match = new Match(team1, team2);
-            mr.add(match);
-            rounds[0][i] = team1;
-            rounds[0][i + 1] = team2;
+            CupMatch cupmatch = new CupMatch(team1, team2);
+            mr.add(cupmatch);
         }
     }
-
-    public void simulateTournament() {
-        int round = 0;
     
+    @Override
+    public void simulateMatches() {
+        int round = 0;
         while (rounds[round].length > 1) {
             for (int i = 0; i < rounds[round].length; i += 2) {
                 Team homeTeam = rounds[round][i];
