@@ -30,6 +30,20 @@ public class GroupPlay extends Competition {
         }
     }
     
+    public void printGroups() {
+        System.out.println("Groups in " + this.name + ":");
+        int groupNumber = 1;
+        for (League group : this.groups) {
+            System.out.println("Grupo " + groupNumber + ":");
+            group.printTeams();
+            groupNumber++;
+        }
+    }
+    public void printGroupPlayMatches(){
+        for (League group : this.groups) {
+            group.printMatches();
+             }
+    }
     public void simulateMatches(){
         for (League liga:this.groups){
             liga.generateMatches();

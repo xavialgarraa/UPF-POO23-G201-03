@@ -380,12 +380,14 @@ public class FootballAplication2 {
         CHAMPIONS.addTeam(GIR);
         CHAMPIONS.addTeam(CEL);
         CHAMPIONS.addTeam(RAY);
+        CHAMPIONS.addTeam(FCB);
 
-        //Mêtodos groupplay NO FUNCIONA PNDE DIVIDED BY 0
+        //Metodos grouPlay
         CHAMPIONS.generateMatches();
         CHAMPIONS.simulateMatches();
         CHAMPIONS.printTeams();
-        CHAMPIONS.printMatches();
+        //CHAMPIONS.printGroupPlayMatches();
+        CHAMPIONS.printGroups();
 
         //METODOS DE COPA QUE NO FUNCIONA EL SIMULATE MATCHES
         //COPA_DEL_REY.getNumTeams();

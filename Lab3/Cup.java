@@ -66,5 +66,5 @@ public class Cup extends Competition {
         System.out.println("El ganador del torneo es: " + tournamentWinner.getName());
     }
     
-
+}
 
