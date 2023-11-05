@@ -5,7 +5,7 @@ public class CupMatch extends Match{
     private boolean prorroga;
     private boolean penalties;
 
-    public CupMatch(Team home, Team away, boolean prorroga, boolean penalties){
+    public CupMatch(Team home, Team away){
         super(home, away);
         this.awayScorers = new LinkedList<Player>();
         this.homeScorers = new LinkedList<Player>();
