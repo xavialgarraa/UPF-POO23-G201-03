@@ -382,9 +382,10 @@ public class FootballAplication2 {
         CHAMPIONS.addTeam(RAY);
 
         //Mêtodos groupplay NO FUNCIONA PNDE DIVIDED BY 0
-        //CHAMPIONS.generateMatches();
-        // CHAMPIONS.simulateMatches();
-        
+        CHAMPIONS.generateMatches();
+        CHAMPIONS.simulateMatches();
+        CHAMPIONS.printTeams();
+        CHAMPIONS.printMatches();
 
         //METODOS DE COPA QUE NO FUNCIONA EL SIMULATE MATCHES
         //COPA_DEL_REY.getNumTeams();
@@ -392,15 +393,15 @@ public class FootballAplication2 {
         //COPA_DEL_REY.simulateMatches();
 
         //METODOS DE LIGA
-        LALIGA.printTeams();
-        LALIGA.generateMatches();
+        //LALIGA.printTeams();
+        //LALIGA.generateMatches();
         //LALIGA.printRounds();
        
         //LALIGA.generateMatches(); 
-        LALIGA.simulateMatches();
+        //LALIGA.simulateMatches();
         //LALIGA.printMatches();
-        FCB.PrintStats();
-        LALIGA.printTopScorers();
+        //FCB.PrintStats();
+        //LALIGA.printTopScorers();
         //RM9.PrintStats();
 
     }
