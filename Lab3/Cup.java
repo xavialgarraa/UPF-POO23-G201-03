@@ -46,7 +46,10 @@ public class Cup extends Competition {
             for (int i = 0; i < rounds[round].length; i += 2) {
                 Team homeTeam = rounds[round][i];
                 Team awayTeam = rounds[round][i + 1];
-                simulateMatch(homeTeam, awayTeam, round + 1);
+                for (Match m:mr){
+                    m.simulateMatch();
+                }
+                
     
                 // Imprime el resultado del partido y el número de ronda
                 System.out.println("Ronda " + (round + 1));
@@ -64,21 +67,4 @@ public class Cup extends Competition {
     }
     
 
-    public void simulateMatch(Team homeTeam, Team awayTeam, int round) {
-        Match match = new Match(homeTeam, awayTeam);
-        match.simulateMatch();
 
-        int homeGoals = match.getHomeGoals();
-        int awayGoals = match.getAwayGoals();
-        
-        while (homeGoals == awayGoals) {
-            match.simulateMatch();
-            
-        }
-        if (homeGoals > awayGoals) {
-            rounds[round + 1][rounds[round + 1].length / 2] = homeTeam;
-        } else if (homeGoals < awayGoals) {
-            rounds[round + 1][rounds[round + 1].length / 2] = awayTeam;
-        }
-    }
-}

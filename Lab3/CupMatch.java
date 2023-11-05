@@ -12,7 +12,8 @@ public class CupMatch extends Match{
         prorroga = false;
         penalties = false;
     }
-
+    
+    @Override
     public void simulateMatch(){
         super.simulateMatch();
         if (homeGoals == awayGoals){
