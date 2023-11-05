@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Group extends Competition {
+public class GroupPlay extends Competition {
    
     private int noGroups;
     private LinkedList<League> groups;
 
-    public Group(String name, Country country, L_Gender gender, boolean clubs, int noGroups){
+    public Group(String name, Country country, L_Gender gender, boolean clubs){
         super(name, country, gender, clubs);
         this.noGroups = noGroups;
         this.groups =  new LinkedList<League>();

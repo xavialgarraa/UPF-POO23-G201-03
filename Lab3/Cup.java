@@ -11,7 +11,7 @@ public class Cup extends Competition {
         this.tr = new LinkedList<Team>();
         this.mr = new LinkedList<Match>();
         int numTeams = getNumTeams();
-        this.rounds = new Team[4][4];
+        this.rounds = new Team[numTeams][numTeams];
     }
 
     public int getNumTeams() {
