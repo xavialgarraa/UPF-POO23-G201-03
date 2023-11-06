@@ -72,7 +72,7 @@ public class CupMatch extends Match{
         }
     }
     public void printmatch(){
-        System.out.println(getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
+        System.out.println("\n"+getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
         System.out.println("------------------------------------");
         System.out.println("Crónica del Partido: ");
         for (Player p: homeScorers){
@@ -83,7 +83,8 @@ public class CupMatch extends Match{
         }
         if (prorroga){
             System.out.println("El partido finalizó en los primeros 90 minutos en empate\n");
-        }
+        }else System.out.println("El partido no tuvo que llegar a la prorroga.\n");
+
         if (penalties){
             System.out.println("El partido finalizó en los primeros 120 minutos en empate, decidido en la tanda de penaltis\n");
         }

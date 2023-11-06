@@ -375,6 +375,8 @@ public class FootballAplication2 {
         COPA_DEL_REY.addTeam(GIR);
         COPA_DEL_REY.addTeam(CEL);
         COPA_DEL_REY.addTeam(RAY);
+        COPA_DEL_REY.addTeam(RM);
+        COPA_DEL_REY.addTeam(FCB);
 
         CHAMPIONS.addTeam(BET);
         CHAMPIONS.addTeam(GIR);
@@ -389,10 +391,11 @@ public class FootballAplication2 {
         //CHAMPIONS.printGroupPlayMatches();
         CHAMPIONS.printGroups();
 
-        //METODOS DE COPA QUE NO FUNCIONA EL SIMULATE MATCHES
-        //COPA_DEL_REY.getNumTeams();
-        //COPA_DEL_REY.generateMatches();
-        //COPA_DEL_REY.simulateMatches();
+        COPA_DEL_REY.TeamstoCompetition();
+        COPA_DEL_REY.generateMatches();
+        COPA_DEL_REY.simulateMatches();
+        
+        FCB8.PrintStats();
 
         //METODOS DE LIGA
         //LALIGA.printTeams();
@@ -402,7 +405,7 @@ public class FootballAplication2 {
         //LALIGA.generateMatches(); 
         //LALIGA.simulateMatches();
         //LALIGA.printMatches();
-        //FCB.PrintStats();
+        FCB.PrintStats();
         //LALIGA.printTopScorers();
         //RM9.PrintStats();
 

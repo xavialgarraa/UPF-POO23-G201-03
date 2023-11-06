@@ -48,7 +48,6 @@ public class Player {
     }
 
     public void updateStats(Match m){
-        this.matchesPlayed++;
     }
 
     public boolean equals(Object o){

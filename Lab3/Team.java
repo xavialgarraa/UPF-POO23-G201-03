@@ -147,7 +147,7 @@ public class Team {
     public void PrintStats(){
         System.out.println("\nInformación del equipo:");
         System.out.println("Nombre: " + getName());
-        System.out.println("País: " + getCountry());
+        System.out.println("País: " + getCountry().getName());
         System.out.println("Género: " + getGenderStr());
         System.out.println("Partidos jugados: " + getMatchesPlayed());
         System.out.println("Puntos totales: " + getPoints());

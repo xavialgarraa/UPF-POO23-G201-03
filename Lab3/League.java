@@ -20,6 +20,7 @@ public class League extends Competition{
     public void simulateMatches(){
         for (Match match : matches) {
             match.simulateMatch();
+            match.printmatch();
             match.getHomeTeam().updateStats(match);
             match.getAwayTeam().updateStats(match);
         }

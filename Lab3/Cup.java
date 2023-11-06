@@ -1,70 +1,70 @@
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class Cup extends Competition {
-    private LinkedList<Team> tr;
-    private LinkedList<Match> mr;
-    private Team[][] rounds;
+    private List<Team> tr;
+    private List<CupMatch> mr;
 
     public Cup(String name, Country country, L_Gender gender, boolean clubs) {
         super(name, country, gender, clubs);
-        this.tr = new LinkedList<Team>();
-        this.mr = new LinkedList<Match>();
-        int numTeams = getNumTeams();
-        this.rounds = new Team[numTeams][numTeams];
+        this.mr = new ArrayList<CupMatch>();
+        this.tr = new ArrayList<Team>();
     }
 
-    
-    public int getNumTeams() {
-        return tr.size();
+    public void TeamstoCompetition() {
+        tr.addAll(teams);
     }
 
     public void generateMatches() {
-        for(Team t:teams){
-            tr.add(t);
-        }
-        Collections.shuffle(tr);
-        int numTeams = tr.size();
+        while (tr.size()>1) {
+            Collections.shuffle(tr);
+            int numTeams = tr.size();
+            Team t = null;
+            
+            if (numTeams % 2 != 0) {
+                t = tr.remove(numTeams - 1);
+            }
+    
+            for (int i = 0; i < tr.size(); i += 2) { 
+                Team team1 = tr.get(i);
+                Team team2 = tr.get(i + 1);
+                CupMatch cupmatch = new CupMatch(team1, team2);
+                mr.add(cupmatch);
+            }
+    
+            List<Team> winnList = new ArrayList<>();
 
-        if (numTeams % 2 != 0) {
-            Team t = tr.removeLast();
-            numTeams--;
+            for (CupMatch m : mr) {
+                m.simulateMatch();
+                m.printmatch();
+                m.getHomeTeam().updateStats(m);
+                m.getAwayTeam().updateStats(m);
+                if (m.getHomeGoals() < m.getAwayGoals()) {
+                    winnList.add(m.getAwayTeam());
+                } else {
+                    winnList.add(m.getHomeTeam());
+                }
+            }
+            
+            if (t != null){
+                winnList.add(t);
+            }
+            tr = winnList;
+            mr.clear();
+            
         }
-
-        for (int i = 0; i < numTeams; i += 2) {
-            Team team1 = tr.get(i);
-            Team team2 = tr.get(i + 1);
-            CupMatch cupmatch = new CupMatch(team1, team2);
-            mr.add(cupmatch);
-        }
+        
+        
     }
     
     @Override
     public void simulateMatches() {
-        int round = 0;
-        while (rounds[round].length > 1) {
-            for (int i = 0; i < rounds[round].length; i += 2) {
-                Team homeTeam = rounds[round][i];
-                Team awayTeam = rounds[round][i + 1];
-                for (Match m:mr){
-                    m.simulateMatch();
-                }
-                
-    
-                // Imprime el resultado del partido y el número de ronda
-                System.out.println("Ronda " + (round + 1));
-                System.out.println(homeTeam.getName() + " vs. " + awayTeam.getName());
-                System.out.println("Resultado: " + homeTeam.getName() + " " + homeTeam.getGoalsScored() + " - " + homeTeam.getGoalsScored() + " " + awayTeam.getName());
-                System.out.println("------------------------------------");
-            }
-    
-            round++;
+        if (!tr.isEmpty()) {
+            System.out.println("El ganador de " + this.name + " es:\n" + tr.get(0).name);
+        } else {
+            System.out.println("No se han simulado partidos en " + this.name);
         }
-    
-        // Al final del bucle while, el ganador del torneo debería estar en rounds[round - 1][0]
-        Team tournamentWinner = rounds[round - 1][0];
-        System.out.println("El ganador del torneo es: " + tournamentWinner.getName());
     }
-    
 }
-

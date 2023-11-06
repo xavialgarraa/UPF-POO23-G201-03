@@ -10,8 +10,9 @@ public class Outfilder extends Player{
         super(gender, name, age, nationality);
     }
     
+    @Override
     public void updateStats(Match m){
-        super.updateStats(m); // Actualiza el número de partidos jugados desde la clase base      
+        matchesPlayed++; // Actualiza el número de partidos jugados desde la clase base      
         Random random = new Random();
         this.shots += random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
         this.tackles += random.nextInt(20);
@@ -40,6 +41,7 @@ public class Outfilder extends Player{
     
     public void PrintStats(){
         System.out.println("\nInformación de "+getName()+ ":");
+        System.out.println("Partidos jugados: " + getMatchesPlayed());
         System.out.println("Goles: " + getGoals());
         System.out.println("Pases: " + getPasses());
         System.out.println("Asistencias: " + getAssists());
