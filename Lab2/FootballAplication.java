@@ -368,14 +368,14 @@ public class FootballAplication {
         LALIGA.addTeam(RM);
         LALIGA.addTeam(ATM);
         LALIGA.addTeam(VAL);
-        /*/LALIGA.addTeam(VIL);
+        LALIGA.addTeam(VIL);
         LALIGA.addTeam(SEV);
         LALIGA.addTeam(RS);
         LALIGA.addTeam(BET);
         LALIGA.addTeam(GIR);
         LALIGA.addTeam(CEL);
         LALIGA.addTeam(RAY);
-        LALIGA.addTeam(ATH);*/
+        LALIGA.addTeam(ATH);
 
         /*LALIGA.printTeams();
         LALIGA.generateMatches();
