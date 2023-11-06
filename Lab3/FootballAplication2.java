@@ -385,12 +385,12 @@ public class FootballAplication2 {
         CHAMPIONS.addTeam(FCB);
 
         //Metodos grouPlay
-        CHAMPIONS.generateMatches();
-        CHAMPIONS.simulateMatches();
         CHAMPIONS.printTeams();
-        //CHAMPIONS.printGroupPlayMatches();
+        CHAMPIONS.generateMatches();
         CHAMPIONS.printGroups();
-
+        CHAMPIONS.simulateMatches();
+        //CHAMPIONS.printGroupPlayMatches();
+        
         COPA_DEL_REY.TeamstoCompetition();
         COPA_DEL_REY.generateMatches();
         COPA_DEL_REY.simulateMatches();
