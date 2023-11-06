@@ -71,8 +71,9 @@ public class CupMatch extends Match{
             }
         }
     }
-    public void printmatch(){
-        System.out.println("\n"+getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
+    public void printmatch(Competition c){
+        System.out.println("\nPartido de "+c.name + " que enfrentó a: \n" );
+        System.out.println(getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
         System.out.println("------------------------------------");
         System.out.println("Crónica del Partido: ");
         for (Player p: homeScorers){

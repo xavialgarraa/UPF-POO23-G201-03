@@ -81,8 +81,9 @@ public class Match {
         return homeTeam;
     }
 
-    public void printmatch(){
-        System.out.println("\n"+getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
+    public void printmatch(Competition c){
+        System.out.println("\nPartido de "+c.name + " que enfrentó a: \n" );
+        System.out.println(getHomeTeam().getName() + " " + getHomeGoals() + " - " + getAwayGoals() + " " + getAwayTeam().getName());
         System.out.println("------------------------------------");
         System.out.println("Crónica: ");
         for (Player p: homeScorers){

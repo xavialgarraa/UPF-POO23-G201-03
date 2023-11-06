@@ -91,7 +91,7 @@ public class Competition {
         System.out.println("Resultados de"+ name +": \n" );
         for (Match m : matches) {
             System.out.println("\n");
-            m.printmatch();
+            m.printmatch(this);
         }
     }
 
