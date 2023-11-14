@@ -1,4 +1,4 @@
-public class FootballAplication2 {
+public class FootballAplication3 {
     public static void main(String[] args) {
         // Nacionalidades
         Country espanya = new Country("Espanya");
@@ -395,7 +395,7 @@ public class FootballAplication2 {
         COPA_DEL_REY.generateMatches();
         COPA_DEL_REY.simulateMatches();
         
-        FCB8.PrintStats();
+        FCB8.stats.get(COPA_DEL_REY).PrintStats();
 
         //METODOS DE LIGA
         //LALIGA.printTeams();
@@ -405,7 +405,7 @@ public class FootballAplication2 {
         //LALIGA.generateMatches(); 
         //LALIGA.simulateMatches();
         //LALIGA.printMatches();
-        FCB.PrintStats();
+        FCB.stats.get(COPA_DEL_REY).PrintStats();
         //LALIGA.printTopScorers();
         //RM9.PrintStats();
 

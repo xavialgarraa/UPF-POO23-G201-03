@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Team {
@@ -12,13 +13,7 @@ public class Team {
     protected Country country;
     protected Gender gender;
     protected LinkedList<Player> players;
-    protected int matchesPlayed;
-    protected int wins;
-    protected int ties;
-    protected int losses;
-    protected int goalsScored;
-    protected int goalsAgainst;
-    protected int points;
+    protected HashMap<Competition,TeamStats> stats;
 
     // Constructor
     public Team(String name, Country country, Gender gender) {
@@ -26,6 +21,7 @@ public class Team {
         this.country = country;
         this.gender = gender;
         this.players = new LinkedList<>();
+        this.stats  = new HashMap<>();
     }
 
     // Método para agregar un jugador al equipo
@@ -57,6 +53,19 @@ public class Team {
         players.remove(player);
     }
 
+    public void update(Competition c, Match m){
+        if (!stats.containsKey(c)){
+            TeamStats newStats = new TeamStats(this);
+            stats.put(c, newStats);
+        }
+        this.stats.get(c).updateStats(m);
+        for (Player p:m.homeTeam.getPlayers()){
+            p.update(c, m);
+        }
+        for (Player p:m.awayTeam.getPlayers()){
+            p.update(c, m);;
+        }
+    }
     // Getters para los atributos del equipo
     public String getName() {
         return name;
@@ -78,84 +87,9 @@ public class Team {
         return players;
     }
 
-    // Getters para las estadísticas del equipo
-    public int getMatchesPlayed() {
-        return matchesPlayed;
-    }
-
-    public int getWins() {
-        return wins;
-    }
-
-    public int getTies() {
-        return ties;
-    }
-
-    public int getLosses() {
-        return losses;
-    }
-
-    public int getGoalsScored() {
-        return goalsScored;
-    }
-
-    public int getGoalsAgainst() {
-        return goalsAgainst;
-    }
-    
-    public int getPoints() {
-        return points;
-    }
     public Country getCountry() {
         return country;
     }
 
-    public void updateStats(Match m){
-        if (this.name == m.getHomeTeam().getName()) {
-            this.matchesPlayed++;
-            this.goalsScored += m.getHomeGoals();
-            this.goalsAgainst += m.getAwayGoals();
-            if (m.getHomeGoals()>m.getAwayGoals()){
-                this.points += 3;
-                this.wins++;
-            } else if (m.getHomeGoals()< m.getAwayGoals()){
-                this.losses++;
-            } else{
-                this.points++;
-                this.ties++;
-            } 
-        }
-        else if (this.name == m.getAwayTeam().getName()) {
-            this.matchesPlayed++;
-            this.goalsScored += m.getAwayGoals();
-            this.goalsAgainst += m.getHomeGoals();
-            if (m.getHomeGoals() < m.getAwayGoals()){
-                this.points += 3;
-                this.wins++;
-            } else if (m.getHomeGoals()> m.getAwayGoals()){
-                this.losses++;
-            } else{
-                this.points++;
-                this.ties++;
-            } 
-        } else{
-            System.out.println("El partido llevado a estadísticas no existe.");
-        }
-    }
-
-
-    public void PrintStats(){
-        System.out.println("\nInformación del equipo:");
-        System.out.println("Nombre: " + getName());
-        System.out.println("País: " + getCountry().getName());
-        System.out.println("Género: " + getGenderStr());
-        System.out.println("Partidos jugados: " + getMatchesPlayed());
-        System.out.println("Puntos totales: " + getPoints());
-        System.out.println("Victorias: " + getWins());
-        System.out.println("Empates: " + getTies());
-        System.out.println("Derrotas: " + getLosses());
-        System.out.println("Goles a favor: " + getGoalsScored());
-        System.out.println("Goles en contra: " + getGoalsAgainst());
-    }
 }
 

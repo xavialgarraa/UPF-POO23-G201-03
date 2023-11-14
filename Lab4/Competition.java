@@ -98,8 +98,12 @@ public class Competition {
     // Implement simulateMatch method for simulating individual matches.
     public void simulateSingleMatches(Match m) {
         m.simulateMatch();
-        m.getHomeTeam().updateStats(m);
-        m.getAwayTeam().updateStats(m);
+        for (Player p:m.homeTeam.getPlayers()){
+            p.update(this, m);
+        }
+        for (Player p:m.awayTeam.getPlayers()){
+            p.update(this, m);
+        }
     }
     
     public void printSingleMatches(Match m){

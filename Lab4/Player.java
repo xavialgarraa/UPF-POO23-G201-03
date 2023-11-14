@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Player {
     // Instance variables
     protected boolean gender;
@@ -6,6 +8,8 @@ public class Player {
     protected Country nationality;
     protected int matchesPlayed;
     protected int goals;
+    protected HashMap<Competition,PlayerStats> stats;
+
 
     // Constructor
     public Player(boolean gender, String name, int age, Country nationality) {
@@ -13,6 +17,7 @@ public class Player {
         this.name = name;
         this.age = age;
         this.nationality = nationality;
+        this.stats = new HashMap<>();
     }
 
     // Getters for player attributes
@@ -47,7 +52,7 @@ public class Player {
         this.goals++;
     }
 
-    public void updateStats(Match m){
+    public void update(Competition c, Match m){  
     }
 
     public boolean equals(Object o){

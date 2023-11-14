@@ -46,8 +46,14 @@ public class Cup extends Competition {
                 CupMatch m = mr[round][i];
                 m.simulateMatch();
                 m.printmatch(this);
-                m.getHomeTeam().updateStats(m);
-                m.getAwayTeam().updateStats(m);
+                m.homeTeam.update(this, m);
+                m.awayTeam.update(this, m);                
+                for (Player p:m.homeTeam.getPlayers()){
+                    p.update(this, m);
+                }
+                for (Player p:m.awayTeam.getPlayers()){
+                    p.update(this, m);
+                }
                 if (m.getHomeGoals() < m.getAwayGoals()) {
                     tr[round+1][i] = m.getAwayTeam();
                 } else {

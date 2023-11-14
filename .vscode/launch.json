@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FootballAplication3",
+            "request": "launch",
+            "mainClass": "FootballAplication3",
+            "projectName": "UPF-POO23-G201-03_3157abc9"
+        },
+        {
+            "type": "java",
             "name": "FootballAplication2",
             "request": "launch",
             "mainClass": "FootballAplication2",

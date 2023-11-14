@@ -40,9 +40,8 @@ public class Match {
             }
             
         }
-        for (Player players:this.homeTeam.getPlayers()){
-            if(players instanceof Goalkeeper){
-                ((Goalkeeper)players).updateStats(this);
+        /*for (Player players:this.homeTeam.getPlayers()){
+            players.stats.get(random);
             }else{
                 ((Outfilder)players).updateStats(this);
             }
@@ -53,7 +52,7 @@ public class Match {
             }else{
                 ((Outfilder)players).updateStats(this);
             }
-        }
+        }*/
     }
 
     
