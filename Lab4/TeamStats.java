@@ -1,4 +1,4 @@
-public class TeamStats implements Comparable {
+public class TeamStats implements Comparable<TeamStats> {
     protected Team team;
     protected int matchesPlayed;
     protected int wins;
@@ -86,7 +86,11 @@ public class TeamStats implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o){
-        return 3;
+    public int compareTo(TeamStats o){
+        if (this.points > o.points){
+            return 1;
+        } else if (this.points < o.points){
+            return -1;
+        }else return 0;
     }
 }

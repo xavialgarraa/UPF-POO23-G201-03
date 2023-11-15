@@ -1,4 +1,4 @@
-public abstract class PlayerStats implements Comparable{
+public abstract class PlayerStats implements Comparable<PlayerStats>{
     protected Player player;
     protected int noMatches;
     

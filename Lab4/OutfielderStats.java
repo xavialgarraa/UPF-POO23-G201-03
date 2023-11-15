@@ -40,8 +40,9 @@ public class OutfielderStats extends PlayerStats{
     }
 
     @Override
-    public int compareTo(Object o){
-        return 3;
+    public int compareTo(PlayerStats o){
+        return -1;
+
     }
 }
 
