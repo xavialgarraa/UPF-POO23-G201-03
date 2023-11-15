@@ -28,7 +28,6 @@ public class GoalkeeperStats extends PlayerStats{
         
     public void PrintStats(){
             System.out.println("\nInformación de "+this.player.getName()+ ":");
-            System.out.println("Goles: " + this.player.getGoals());
             System.out.println("Paradas: " + getSaves());
             System.out.println("Goles Recibidos: " + getGoalsAgainst());}
         

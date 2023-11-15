@@ -16,7 +16,7 @@ public class Match {
         this.awayScorers = new LinkedList<Player>();
     }
 
-    public void simulateMatch() {
+    public void simulateMatch(Competition c) {
         Random random = new Random();
         homeGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo local (0-6)
         awayGoals = random.nextInt(7); // Genera un número aleatorio de goles para el equipo visitante (0-6)
@@ -25,18 +25,24 @@ public class Match {
         if (homeTeam != null && awayTeam != null) {
             // Simulate home team's goals and goal scorers
             for (int i = 0; i < homeGoals && !this.homeTeam.getPlayers().isEmpty(); i++) {
-                randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
-                Player scorer = homeTeam.getPlayers().get(randomGoalIndex);
+                Player scorer;
+                do{
+                    randomGoalIndex = random.nextInt(homeTeam.getPlayers().size());
+                    scorer = homeTeam.getPlayers().get(randomGoalIndex);
+                } while (scorer instanceof Goalkeeper);
                 homeScorers.add(scorer);
-                scorer.marcarGol();; // Actualiza estadísticas de gol del jugador
+                scorer.stats.get(c).marcarGol();; // Actualiza estadísticas de gol del jugador
             }
     
             // Simulate away team's goals and goal scorers
             for (int i = 0; i < awayGoals && !awayTeam.getPlayers().isEmpty(); i++) {
-                randomGoalIndex = random.nextInt(awayTeam.getPlayers().size());
-                Player scorer = awayTeam.getPlayers().get(randomGoalIndex);
+                Player scorer;
+                do{
+                    randomGoalIndex = random.nextInt(awayTeam.getPlayers().size());
+                    scorer = awayTeam.getPlayers().get(randomGoalIndex);
+                } while (scorer instanceof Goalkeeper);
                 awayScorers.add(scorer);
-                scorer.marcarGol(); // Actualiza estadísticas de gol del jugador 
+                scorer.stats.get(c).marcarGol();; // Actualiza estadísticas de gol del jugador
             }
             
         }

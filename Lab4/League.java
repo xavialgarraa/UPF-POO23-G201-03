@@ -19,7 +19,7 @@ public class League extends Competition{
     @Override
     public void simulateMatches(){
         for (Match match : matches) {
-            match.simulateMatch();
+            match.simulateMatch(this);
             match.printmatch(this);
             match.getHomeTeam().update(this,match);
             match.getAwayTeam().update(this,match);

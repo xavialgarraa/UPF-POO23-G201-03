@@ -6,8 +6,6 @@ public class Player {
     protected String name;
     protected int age;
     protected Country nationality;
-    protected int matchesPlayed;
-    protected int goals;
     protected HashMap<Competition,PlayerStats> stats;
 
 
@@ -38,19 +36,7 @@ public class Player {
         return Country.class.getName();
     }
 
-    // Getters for player statistics
-    public int getMatchesPlayed() {
-        return matchesPlayed;
-    }
-
-
-    public int getGoals() {
-        return goals;
-    }
-
-    public void marcarGol() {
-        this.goals++;
-    }
+    
 
     public void update(Competition c, Match m){  
     }

@@ -97,7 +97,7 @@ public class Competition {
 
     // Implement simulateMatch method for simulating individual matches.
     public void simulateSingleMatches(Match m) {
-        m.simulateMatch();
+        m.simulateMatch(this);
         for (Player p:m.homeTeam.getPlayers()){
             p.update(this, m);
         }
@@ -134,7 +134,7 @@ public class Competition {
     
     /*public void printLeagueTable() {        
     }*/
-
+    /*/
     public void printTopScorers() {
         System.out.println("\nTop Scorers for " + name);
         System.out.println("-------------------------------");
@@ -178,7 +178,7 @@ public class Competition {
             System.out.println(count+". "+ player.getName() + " - Goals: " + player.getGoals());
             count++;
         }
-    }
+    }*/
     
     
     

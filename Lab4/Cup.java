@@ -44,7 +44,7 @@ public class Cup extends Competition {
             tr[round+1] = new Team[mr[round].length + (t != null ? 1 : 0)];
             for (int i = 0; i < mr[round].length; i++) {
                 CupMatch m = mr[round][i];
-                m.simulateMatch();
+                m.simulateMatch(this);
                 m.printmatch(this);
                 m.homeTeam.update(this, m);
                 m.awayTeam.update(this, m);                
