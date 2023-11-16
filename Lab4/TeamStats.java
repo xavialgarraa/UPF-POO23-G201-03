@@ -86,11 +86,25 @@ public class TeamStats implements Comparable<TeamStats> {
     }
 
     @Override
-    public int compareTo(TeamStats o){
-        if (this.points > o.points){
-            return 1;
-        } else if (this.points < o.points){
-            return -1;
-        }else return 0;
+    public int compareTo(TeamStats o){   
+        if (points != o.points) {
+            return points > o.points ? -1 : 1;
+        }
+    
+        // Si los puntos son iguales, comparamos la diferencia de goles
+        int goalDifference = this.goalsScored - this.goalsAgainst;
+        int oGoalDifference = o.goalsScored - o.goalsAgainst;
+    
+        if (goalDifference != oGoalDifference) {
+            return goalDifference > oGoalDifference ? -1 : 1;
+        }
+    
+        // Si la diferencia de goles es igual, comparamos los goles a favor
+        if (this.goalsScored != o.goalsScored) {
+            return this.goalsScored > o.goalsScored ? -1 : 1;
+        }
+    
+        // Si todos los criterios son iguales, los equipos se pueden ordenar arbitrariamente
+        return 0;
     }
 }

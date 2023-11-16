@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class OutfielderStats extends PlayerStats{
-    private int goals;
     private int tackles;
     private int passes;
     private int shots;
@@ -52,8 +51,17 @@ public class OutfielderStats extends PlayerStats{
 
     @Override
     public int compareTo(PlayerStats o){
-        return -1;
-
+        if (o instanceof OutfielderStats){
+            OutfielderStats os = (OutfielderStats)o;
+            if (this.goals < os.goals) {
+                return -1;
+            } else if (this.goals > os.goals) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        return 0;
     }
 }
 
