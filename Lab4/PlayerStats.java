@@ -1,15 +1,14 @@
 public abstract class PlayerStats implements Comparable<PlayerStats>{
     protected Player player;
     protected int noMatches;
-    protected int goals;
     
     
     public PlayerStats(Player p){
     this.player = p;
+    noMatches = 0;
 }
 
     public void updateStats(Match m){
-        noMatches++;
 }
 
     public abstract void PrintStats();
@@ -22,12 +21,5 @@ public abstract class PlayerStats implements Comparable<PlayerStats>{
         return player;
     }
 
-    public int getGoals() {
-        return goals;
-    }
-
-    public void marcarGol() {
-        this.goals++;
-    }
 
 }

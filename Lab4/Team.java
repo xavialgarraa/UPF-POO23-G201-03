@@ -59,11 +59,8 @@ public class Team {
             stats.put(c, newStats);
         }
         this.stats.get(c).updateStats(m);
-        for (Player p:m.homeTeam.getPlayers()){
+        for (Player p:this.players){
             p.update(c, m);
-        }
-        for (Player p:m.awayTeam.getPlayers()){
-            p.update(c, m);;
         }
     }
     // Getters para los atributos del equipo

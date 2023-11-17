@@ -396,6 +396,9 @@ public class FootballAplication3 {
         COPA_DEL_REY.simulateMatches();
         
         FCB8.stats.get(COPA_DEL_REY).PrintStats();
+        FCB1.stats.get(COPA_DEL_REY).PrintStats();
+        FCB8.stats.get(CHAMPIONS).PrintStats();
+
 
         //METODOS DE LIGA
         //LALIGA.printTeams();
@@ -406,6 +409,7 @@ public class FootballAplication3 {
         //LALIGA.simulateMatches();
         //LALIGA.printMatches();
         FCB.stats.get(COPA_DEL_REY).PrintStats();
+        FCB.stats.get(CHAMPIONS).PrintStats();
         //LALIGA.printTopScorers();
         //RM9.PrintStats();
 

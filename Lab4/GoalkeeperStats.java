@@ -8,10 +8,9 @@ public class GoalkeeperStats extends PlayerStats{
         super(p);
     }
 
+    @Override
     public void updateStats(Match m){
-        super.updateStats(m); // Actualiza el número de partidos jugados desde la clase base            
         Random random = new Random();
-        this.noMatches++;
         this.saves += random.nextInt(7); 
         for (Player players : m.getAwayTeam().players){
             if (players.name == this.player.name){

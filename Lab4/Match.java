@@ -31,7 +31,6 @@ public class Match {
                     scorer = homeTeam.getPlayers().get(randomGoalIndex);
                 } while (scorer instanceof Goalkeeper);
                 homeScorers.add(scorer);
-                scorer.stats.get(c).marcarGol();; // Actualiza estadísticas de gol del jugador
             }
     
             // Simulate away team's goals and goal scorers
@@ -42,7 +41,6 @@ public class Match {
                     scorer = awayTeam.getPlayers().get(randomGoalIndex);
                 } while (scorer instanceof Goalkeeper);
                 awayScorers.add(scorer);
-                scorer.stats.get(c).marcarGol();; // Actualiza estadísticas de gol del jugador
             }
             
         }

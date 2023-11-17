@@ -42,12 +42,18 @@ public class GroupPlay extends Competition {
     public void printGroupPlayMatches(){
         for (League group : this.groups) {
             group.printMatches();
-             }
+        }
     }
+    
     public void simulateMatches(){
         for (League liga:this.groups){
             liga.generateMatches();
-            liga.simulateMatches();
+            for (Match match : liga.matches){
+                match.simulateMatch(this);
+                match.printmatch(this);
+                match.getHomeTeam().update(this,match);
+                match.getAwayTeam().update(this,match);
+            }
         }
     }
 

@@ -23,12 +23,6 @@ public class League extends Competition{
             match.printmatch(this);
             match.getHomeTeam().update(this,match);
             match.getAwayTeam().update(this,match);
-            for (Player p:match.homeTeam.getPlayers()){
-                p.update(this, match);
-            }
-            for (Player p:match.awayTeam.getPlayers()){
-                p.update(this, match);
-            }
         }
     }
     
