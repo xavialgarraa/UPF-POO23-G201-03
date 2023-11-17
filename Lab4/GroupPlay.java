@@ -28,6 +28,9 @@ public class GroupPlay extends Competition {
             groups.get(k).addTeam(equipos_mix.get(i));
 
         }
+        for (League liga:this.groups){
+            liga.generateMatches();
+        }
     }
     
     public void printGroups() {
@@ -47,7 +50,6 @@ public class GroupPlay extends Competition {
     
     public void simulateMatches(){
         for (League liga:this.groups){
-            liga.generateMatches();
             for (Match match : liga.matches){
                 match.simulateMatch(this);
                 match.printmatch(this);
