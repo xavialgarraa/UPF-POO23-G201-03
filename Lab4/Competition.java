@@ -18,6 +18,7 @@ public class Competition {
     protected LinkedList<Team> teams;
     protected LinkedList<Match> matches;
     protected Boolean clubs;
+    protected List<TeamStats> teamsStats;
 
     public Competition(String name, Country country, L_Gender gender, boolean clubs) {
         this.name = name;
@@ -132,8 +133,25 @@ public class Competition {
         return matches;
     }
     
-    /*public void printLeagueTable() {        
-    }*/
+    public void printLeagueTable() { 
+         // Sort the teams based on the overridden compareTo method in TeamStats
+        Collections.sort(teams);
+
+        // Print the league table
+        System.out.println("League Table:");
+        System.out.printf("%-20s %-10s %-10s %-10s %-10s%n", "Team", "Wins", "Ties", "Goals For", "Goals Against");
+        for (TeamStats team : teamsStats) {
+            if (team instanceof TeamStats) {
+                TeamStats actualTeam = (TeamStats) team;
+                System.out.printf("%-20s %-10d %-10d %-10d %-10d%n",
+                        actualTeam.Team.getName(), actualTeam.getWins(), actualTeam.getTies(),
+                        actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
+            }
+        }
+    }
+
+
+    
     /*/
     public void printTopScorers() {
         System.out.println("\nTop Scorers for " + name);
