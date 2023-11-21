@@ -72,6 +72,17 @@ public class Match {
         return awayScorers;
     }
 
+    public LinkedList<Player> getAllScorers() {
+        LinkedList<Player> allscorers = new LinkedList<>();
+        for(Player p:homeScorers){
+            allscorers.add(p);
+        }
+        for(Player p:awayScorers){
+            allscorers.add(p);
+        }
+        return allscorers;
+    }
+
     public Team getAwayTeam() {
         return awayTeam;
     }

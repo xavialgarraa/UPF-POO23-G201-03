@@ -1,5 +1,5 @@
 public class Country {
-    private String name;
+    protected String name;
 
     public Country (String n){
         name = n;

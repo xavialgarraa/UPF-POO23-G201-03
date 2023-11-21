@@ -409,6 +409,7 @@ public class FootballAplication3 {
         LALIGA.simulateMatches();
         //LALIGA.printMatches();
         LALIGA.printLeagueTable();
+        LALIGA.printTopScorers(10);
         //FCB.stats.get(COPA_DEL_REY).PrintStats();
         //FCB.stats.get(CHAMPIONS).PrintStats();
         //LALIGA.printTopScorers();

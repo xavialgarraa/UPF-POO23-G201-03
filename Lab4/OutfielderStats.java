@@ -68,9 +68,9 @@ public class OutfielderStats extends PlayerStats{
         if (o instanceof OutfielderStats){
             OutfielderStats os = (OutfielderStats)o;
             if (this.goals < os.goals) {
-                return -1;
-            } else if (this.goals > os.goals) {
                 return 1;
+            } else if (this.goals > os.goals) {
+                return -1;
             } else {
                 return 0;
             }
