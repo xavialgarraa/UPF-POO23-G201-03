@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
+
 
 public class Competition {
         
@@ -19,6 +21,7 @@ public class Competition {
     protected LinkedList<Match> matches;
     protected Boolean clubs;
     protected List<TeamStats> teamsStats;
+    
 
     public Competition(String name, Country country, L_Gender gender, boolean clubs) {
         this.name = name;
@@ -135,18 +138,18 @@ public class Competition {
     
     public void printLeagueTable() { 
          // Sort the teams based on the overridden compareTo method in TeamStats
-        Collections.sort(teams);
+        Collections.sort(teamsStats);
 
         // Print the league table
         System.out.println("League Table:");
         System.out.printf("%-20s %-10s %-10s %-10s %-10s%n", "Team", "Wins", "Ties", "Goals For", "Goals Against");
         for (TeamStats team : teamsStats) {
-            if (team instanceof TeamStats) {
-                TeamStats actualTeam = (TeamStats) team;
-                System.out.printf("%-20s %-10d %-10d %-10d %-10d%n",
-                        actualTeam.Team.getName(), actualTeam.getWins(), actualTeam.getTies(),
-                        actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
-            }
+            
+            TeamStats actualTeam = (TeamStats) team;
+            System.out.printf("%-20s %-10d %-10d %-10d %-10d%n",
+                    actualTeam.getTeam().getName(), actualTeam.getWins(), actualTeam.getTies(),
+                    actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
+            
         }
     }
 

@@ -32,8 +32,6 @@ public class League extends Competition{
         }
     }
 
-    public void printLeagueTable(){
-        //falta fer
-    }
+
     
   }

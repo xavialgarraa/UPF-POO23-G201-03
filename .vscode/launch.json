@@ -9,6 +9,13 @@
             "name": "FootballAplication3",
             "request": "launch",
             "mainClass": "FootballAplication3",
+            "projectName": "UPF-POO23-G201-03_49318b7f"
+        },
+        {
+            "type": "java",
+            "name": "FootballAplication3",
+            "request": "launch",
+            "mainClass": "FootballAplication3",
             "projectName": "UPF-POO23-G201-03_3157abc9"
         },
         {

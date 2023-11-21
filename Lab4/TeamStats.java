@@ -1,3 +1,4 @@
+
 public class TeamStats implements Comparable<TeamStats> {
     protected Team team;
     protected int matchesPlayed;
