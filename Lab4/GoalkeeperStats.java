@@ -39,6 +39,6 @@ public class GoalkeeperStats extends PlayerStats{
 
     @Override
     public int compareTo(PlayerStats o){
-        return 3;
+        return 0;
     }
 }

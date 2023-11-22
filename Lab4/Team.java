@@ -29,16 +29,19 @@ public class Team {
         // Verificar si el jugador es del mismo género que el equipo
         if (this.gender == Gender.MIXTO) {
             players.add(player);
+            player.team=this;
             System.out.println(player.getName()+" fue añadido/a\n");
 
         } 
         else if (this.gender == Gender.FEMENINO && player.getGender()){
-            players.add(player);
+            players.add(player);            
+            player.team=this;
             System.out.println(player.getName()+" fue añadido/a\n");
 
         }
         else if (this.gender == Gender.MASCULINO && player.getGender() == false){
             players.add(player);
+            player.team=this;
             System.out.println(player.getName()+" fue añadido/a\n");
 
         }

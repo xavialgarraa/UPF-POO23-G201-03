@@ -385,20 +385,28 @@ public class FootballAplication3 {
         CHAMPIONS.addTeam(FCB);
 
         //Metodos grouPlay
-        /*/CHAMPIONS.printTeams();
+        CHAMPIONS.printTeams();
         CHAMPIONS.generateMatches();
         CHAMPIONS.printGroups();
         CHAMPIONS.simulateMatches();
-        //CHAMPIONS.printGroupPlayMatches();
+        CHAMPIONS.printLeagueTable();
+        FCB10.stats.get(CHAMPIONS).PrintStats();
+        FCB6.stats.get(CHAMPIONS).PrintStats();
+        FCB8.stats.get(CHAMPIONS).PrintStats();
+        FCB9.stats.get(CHAMPIONS).PrintStats();
+        FCB11.stats.get(CHAMPIONS).PrintStats();
+        FCB5.stats.get(CHAMPIONS).PrintStats();
+        FCB3.stats.get(CHAMPIONS).PrintStats();
+        CHAMPIONS.printTopScorers(5);
         
-        COPA_DEL_REY.TeamstoCompetition();
+        /*COPA_DEL_REY.TeamstoCompetition();
         COPA_DEL_REY.generateMatches();
         COPA_DEL_REY.simulateMatches();
         
         FCB8.stats.get(COPA_DEL_REY).PrintStats();
         FCB1.stats.get(COPA_DEL_REY).PrintStats();
         FCB8.stats.get(CHAMPIONS).PrintStats();
-        /* */
+        /* 
 
         //METODOS DE LIGA
         //LALIGA.printTeams();
@@ -413,7 +421,7 @@ public class FootballAplication3 {
         //FCB.stats.get(COPA_DEL_REY).PrintStats();
         //FCB.stats.get(CHAMPIONS).PrintStats();
         //LALIGA.printTopScorers();
-        //RM9.PrintStats();
+        //RM9.PrintStats();*/
 
     }
     

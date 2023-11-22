@@ -7,6 +7,7 @@ public class Player {
     protected int age;
     protected Country nationality;
     protected HashMap<Competition,PlayerStats> stats;
+    protected Team team;
 
 
     // Constructor

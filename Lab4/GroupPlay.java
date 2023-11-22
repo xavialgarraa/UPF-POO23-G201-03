@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class GroupPlay extends Competition {
    
@@ -58,10 +59,74 @@ public class GroupPlay extends Competition {
             }
         }
     }
+    
+    @Override
+    public void printLeagueTable() { 
+        System.out.println("\n-----------------" + this.name + "---------------------\n");
+        for(League l:groups){
+                // Sort the teams based on the overridden compareTo method in TeamStats
+            Collections.sort(l.teams, (team1, team2) -> {
+                TeamStats stats1 = (TeamStats) team1.stats.get(this);
+                TeamStats stats2 = (TeamStats) team2.stats.get(this);
+                return stats1.compareTo(stats2);
+            });
 
-    public void printTable(){
-        //FER
+            // Print the league table
+            System.out.println("\nLa clasificación de " + l.name + ":");
+            System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s%n", "Team", "Points", "Wins", "Ties", "Goals For", "Goals Against");
+            System.out.println("--------------------------------------------------------------------------------------");
+
+            int count = 1;
+            // Print sorted teams
+            for (Team team : l.teams) {  
+                TeamStats actualTeam = (TeamStats) team.stats.get(this);
+                System.out.printf("%-22s %-12s %-12s %-12s %-12s %-12s%n", count+"."+team.getName(), actualTeam.points, actualTeam.getWins(), actualTeam.getTies(), actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
+                count++;
+            }
+        }
+        
     }
+    
+    @Override
+    public void printTopScorers(int k){
+        List<Player> allGoalScorers = new ArrayList<>(); // Crear una lista para almacenar todos los jugadores de la liga            
+        for(League l:groups){
+            // Añadir todos los goleadores de todos los equipos a la lista
+            for(Match match : l.matches){
+                for(Player p:match.getAllScorers()){
+                    if (!allGoalScorers.contains(p)){
+                        allGoalScorers.add(p);
+                    }
+                }
+            }
+        }
+            // Ordenar la lista de jugadores en función de los goles marcados
+            Collections.sort(allGoalScorers, (p1, p2) -> {
+                    OutfielderStats stats1 = (OutfielderStats) p1.stats.get(this);
+                    OutfielderStats stats2 = (OutfielderStats) p2.stats.get(this);
+                return stats1.compareTo(stats2); 
+            });
+
+        // Print the league table
+            System.out.println("\nLa clasificación de goleadores de " + this.name + ":");
+            System.out.printf("%-20s %-20s %-13s%n", "Name", "Team", "Goals");
+            System.out.println("---------------------------------------------------------");
+
+            int count = 1;
+            // Print sorted teams
+            while (count<=k && count< allGoalScorers.size()){
+                for (Player p : allGoalScorers) { 
+                    if (count > k) {
+                        break;
+                    } 
+                    OutfielderStats actualplayer = (OutfielderStats) p.stats.get(this);
+                    System.out.printf("%-20s %-20s %-13s%n", count+"."+p.getName(), actualplayer.player.team.name, actualplayer.getGoals());
+                    count++;
+                }
+            }        
+
+    }
+    
 
 
     
