@@ -383,8 +383,13 @@ public class FootballAplication3 {
         CHAMPIONS.addTeam(CEL);
         CHAMPIONS.addTeam(RAY);
         CHAMPIONS.addTeam(FCB);
+        CHAMPIONS.addTeam(RM);
+        CHAMPIONS.addTeam(ATM);
+        CHAMPIONS.addTeam(ATH);
+        CHAMPIONS.addTeam(RS);
 
         //Metodos grouPlay
+        
         CHAMPIONS.printTeams();
         CHAMPIONS.generateMatches();
         CHAMPIONS.printGroups();
@@ -412,12 +417,13 @@ public class FootballAplication3 {
         //LALIGA.printTeams();
         //LALIGA.generateMatches();
         //LALIGA.printRounds();
-       
+       */
+        /* 
         LALIGA.generateMatches(); 
         LALIGA.simulateMatches();
         //LALIGA.printMatches();
         LALIGA.printLeagueTable();
-        LALIGA.printTopScorers(10);
+        LALIGA.printTopScorers(10);*/
         //FCB.stats.get(COPA_DEL_REY).PrintStats();
         //FCB.stats.get(CHAMPIONS).PrintStats();
         //LALIGA.printTopScorers();

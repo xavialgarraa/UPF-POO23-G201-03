@@ -10,7 +10,7 @@ public class GroupPlay extends Competition {
 
     public GroupPlay(String name, Country country, L_Gender gender, boolean clubs){
         super(name, country, gender, clubs);
-        this.noGroups = 2;
+        this.noGroups = 3;
         this.groups =  new LinkedList<League>();
     }
 
@@ -73,14 +73,15 @@ public class GroupPlay extends Competition {
 
             // Print the league table
             System.out.println("\nLa clasificación de " + l.name + ":");
-            System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s%n", "Team", "Points", "Wins", "Ties", "Goals For", "Goals Against");
-            System.out.println("--------------------------------------------------------------------------------------");
+            System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s %-15s %-12s%n", "Team", "Points", "Wins", "Ties", "Losses", "Goals For", "Goals Against", "Goal diference(+/-)");
+            System.out.println("---------------------------------------------------------------------------------------------------------------------------");
 
             int count = 1;
             // Print sorted teams
             for (Team team : l.teams) {  
                 TeamStats actualTeam = (TeamStats) team.stats.get(this);
-                System.out.printf("%-22s %-12s %-12s %-12s %-12s %-12s%n", count+"."+team.getName(), actualTeam.points, actualTeam.getWins(), actualTeam.getTies(), actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
+                int goalDiference = actualTeam.getGoalsScored() - actualTeam.getGoalsAgainst();
+                System.out.printf("%-22s %-12s %-13s %-12s %-12s %-12s %-18s %-25s%n", count+"."+team.getName(), actualTeam.points, actualTeam.getWins(), actualTeam.getTies(), actualTeam.getLosses(), actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst(), goalDiference);
                 count++;
             }
         }
@@ -109,8 +110,8 @@ public class GroupPlay extends Competition {
 
         // Print the league table
             System.out.println("\nLa clasificación de goleadores de " + this.name + ":");
-            System.out.printf("%-20s %-20s %-13s%n", "Name", "Team", "Goals");
-            System.out.println("---------------------------------------------------------");
+            System.out.printf("%-20s %-20s %-20s %-13s%n", "Name", "Team", "Goals", "Goals x Match");
+            System.out.println("-------------------------------------------------------------------------");
 
             int count = 1;
             // Print sorted teams
@@ -120,7 +121,8 @@ public class GroupPlay extends Competition {
                         break;
                     } 
                     OutfielderStats actualplayer = (OutfielderStats) p.stats.get(this);
-                    System.out.printf("%-20s %-20s %-13s%n", count+"."+p.getName(), actualplayer.player.team.name, actualplayer.getGoals());
+                    double goalsPerMatch = (float) actualplayer.getGoals() / actualplayer.noMatches;
+                    System.out.printf("%-20s %-22s %-21s %.2f%n", count+"."+p.getName(), actualplayer.player.team.name, actualplayer.getGoals(), goalsPerMatch);
                     count++;
                 }
             }        
