@@ -47,8 +47,8 @@ public class League extends Competition{
 
         // Print the league table
         System.out.println("\nLa clasificación de " + this.name + ":");
-        System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s %-15s %-12s%n", "Team", "Points", "Wins", "Ties", "Losses", "Goals For", "Goals Against", "Goal diference(+/-)");
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s %-15s %-12s%n", "Team", "Points", "Wins", "Ties", "Losses", "Goals For", "Goals Against", "Goal dif (+/-)");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 
         int count = 1;
         // Print sorted teams
