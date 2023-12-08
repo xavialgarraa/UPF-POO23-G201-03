@@ -43,8 +43,8 @@ public:
     }
 
     void addPlayer(Player * p) {
-        if ((gender == Gender::MALE && !p->isFemale()) ||
-            (gender == Gender::FEMALE && p->isFemale()) ||
+        if ((gender == Gender::MALE && !p->getGender()) ||
+            (gender == Gender::FEMALE && p->getGender()) ||
             gender == Gender::MIXED)
             players.push_back(p);
     }
