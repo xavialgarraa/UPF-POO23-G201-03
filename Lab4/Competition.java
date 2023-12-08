@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
-import java.util.List;
 
 
 public class Competition {
@@ -132,30 +129,6 @@ public class Competition {
         return matches;
     }
     
-    /*public void printLeagueTable() { 
-        // Print the league table
-        System.out.println("\nLa clasificación de " + this.name + ":");
-        System.out.printf("%-20s %-13s %-12s %-12s %-12s %-12s%n", "Team", "Points", "Wins", "Ties", "Goals For", "Goals Against");
-        System.out.println("--------------------------------------------------------------------------------------");
-        for (int i = 0; i < this.teams.size(); i++) {  
-            for (int j = i+1; j < this.teams.size(); j++){
-                TeamStats actualTeam = (TeamStats) this.teams.get(i).stats.get(this);
-                TeamStats nextTeam = (TeamStats) this.teams.get(j).stats.get(this);
-                if (nextTeam.compareTo(actualTeam)==-1){ //nextTeam tiene mas puntos que actualTeam
-                    Team temp = this.teams.get(i);
-                    this.teams.set(i, this.teams.get(j));
-                    this.teams.set(j, temp);
-                }
-            }
-        }
-        int count = 1;
-        // Print sorted teams
-        for (Team team : this.teams) {  
-            TeamStats actualTeam = (TeamStats) team.stats.get(this);
-            System.out.printf("%-22s %-12s %-12s %-12s %-12s %-12s%n", count+"."+team.getName(), actualTeam.points, actualTeam.getWins(), actualTeam.getTies(), actualTeam.getGoalsScored(), actualTeam.getGoalsAgainst());
-            count++;
-        }
-    }*/
     
     
     public void printLeagueTable() { 
