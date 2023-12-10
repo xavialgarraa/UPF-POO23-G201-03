@@ -1,57 +1,68 @@
+#include "Country.hpp"
+#include "Player.hpp"
+#include "Outfielder.hpp"
+#include "Team.hpp"
+#include "Match.hpp"
 #include <iostream>
-#include <string>
-#include <vector>
 
 int main() {
-    // Crear países
-    Country country1("Country1");
-    Country country2("Country2");
+    // Nacionalidades
+    Country espanya("Espanya");
+    Country argentina("Argentina");
+    Country portugal("Portugal");
+    Country brasil("Brasil");
+    Country francia("Francia");
+    Country polonia("Polonia");
+    Country estadosUnidos("Estados Unidos");
+    Country australia("Australia");
+    Country dinamarca("Dinamarca");
 
-    // Crear jugadores
-    Player player1(true, "Player1", 25, country1);
-    Player player2(false, "Player2", 28, country1);
-    Player player3(true, "Player3", 22, country2);
+    // Jugadores masculinos 
+    Outfielder jugador1(false, "Messi", 34, argentina);
+    Outfielder jugador2(false, "Ronaldo", 36, portugal);
+    Outfielder jugador3(false, "Neymar", 29, brasil);
+    Outfielder jugador4(false, "Mbappé", 22, francia);
+    Outfielder jugador5(false, "Lewandowski", 33, polonia);
 
-    // Crear equipos
-    Team team1("Team1", country1, Team::Gender::MASCULINO);
-    Team team2("Team2", country2, Team::Gender::FEMENINO);
+    // Jugadoras femeninas 
+    Outfielder jugadora1(true, "Marta", 35, brasil);
+    Outfielder jugadora2(true, "Alex Morgan", 32, estadosUnidos);
+    Outfielder jugadora3(true, "Carli Lloyd", 39, estadosUnidos);
+    Outfielder jugadora4(true, "Sam Kerr", 28, australia);
+    Outfielder jugadora5(true, "Pernille Harder", 29, dinamarca);
+  
+    //Agregar equipos
+    Team t1("FC Barcelona", &espanya, Team::Gender::MALE);
+    Team t2("C.D.Tacón", &espanya, Team::Gender::FEMALE);
+    Team t3("C.F.Igualtat", &brasil, Team::Gender::MIXED);
 
-    // Añadir jugadores a los equipos
-    team1.addPlayer(player1);
-    team1.addPlayer(player2);
-    team2.addPlayer(player3);
+    // Agregar jugadores a los equipos
+    t1.addPlayer(&jugador1);
+    t1.addPlayer(&jugador2);   
+    t1.addPlayer(&jugador5);   
 
-    // Crear un partido entre los equipos
-    Match match(team1, team2);
+    t2.addPlayer(&jugadora1); 
+    t2.addPlayer(&jugadora2);
+    t2.addPlayer(&jugadora4);
 
-    // Simular el partido
-    match.simulateMatch();
+    t3.addPlayer(&jugador3);
+    t3.addPlayer(&jugadora3);
+    t3.addPlayer(&jugador4);
 
-    // Imprimir estadísticas del partido
-    match.printMatch();
+    // Crear un partido entre los dos equipos
+    Match m(&t1, &t2);
 
-    // Imprimir estadísticas de los equipos
-    team1.PrintStats();
-    team2.PrintStats();
+    // Simular el partido y imprimir el resultado
+    m.simulateMatch();
+    m.printMatch();
 
-    // Imprimir estadísticas de los jugadores
-    for (const Player& player : team1.getPlayers()) {
-        std::cout << "\nEstadísticas de " << player.getName() << ":\n";
-        if (dynamic_cast<Goalkeeper*>(&player) != nullptr) {
-            dynamic_cast<Goalkeeper*>(&player)->PrintStats();
-        } else {
-            dynamic_cast<Outfielder*>(&player)->PrintStats();
-        }
-    }
+    // Actualizar las estadísticas de cada jugador como resultado de jugar el partido
+    jugador1.updateStats(m);
+    jugador2.updateStats(m);
+    jugadora1.updateStats(m);
 
-    for (const Player& player : team2.getPlayers()) {
-        std::cout << "\nEstadísticas de " << player.getName() << ":\n";
-        if (dynamic_cast<Goalkeeper*>(&player) != nullptr) {
-            dynamic_cast<Goalkeeper*>(&player)->PrintStats();
-        } else {
-            dynamic_cast<Outfielder*>(&player)->PrintStats();
-        }
-    }
+    // Imprimir las estadísticas de cada jugador
+    jugador1.printStats();
 
     return 0;
 }
