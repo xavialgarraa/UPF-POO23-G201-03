@@ -1,39 +1,49 @@
-// Player.hpp
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#ifndef _PLAYER_
+#define _PLAYER_
 
-#include "Country.hpp"
-class Match; // Declaración directa de Match
+#include <cstdlib>
+#include <iostream>
+#include <list>
+#include "Match.hpp"
+#include "Team.hpp"
 
 class Player {
-public:
-    // Constructor
-    Player(bool gender, std::string name, int age, Country nationality)
-        : gender(gender), name(name), age(age), nationality(nationality), matchesPlayed(0), goals(0) {}
-
-    // Getters for player attributes
-    bool getGender() { return gender; }
-    std::string getName() { return name; }
-    int getAge() { return age; }
-    std::string getNationality() { return nationality.getName(); }
-
-    // Getters for player statistics
-    int getMatchesPlayed() { return matchesPlayed; }
-    int getGoals() { return goals; }
-
-    // Other methods
-    void marcarGol() { goals++; }
-    virtual void updateStats(Match m) = 0; // Método abstracto
-    bool equals(Player* o) { return name == o->getName(); }
-
 protected:
-    bool gender;
     std::string name;
     int age;
-    Country nationality;
-    int matchesPlayed;
-    int goals;
+    bool female;
+    Country * nationality;
+
+public:
+    Player(bool g, std::string n, int a, Country * c) {
+        female = g;
+        name = n;
+        age = a;
+        nationality = c;
+    }
+
+    bool isFemale() {
+        return female;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    std::string getName(){
+        return name;
+    }
+
+    Country * getNationality() {
+        return nationality;
+    }
+
+    virtual void updateStats(Match * m) = 0;
+    virtual void printStats() = 0;
 };
 
-#endif // PLAYER_HPP
 
+
+
+
+#endif

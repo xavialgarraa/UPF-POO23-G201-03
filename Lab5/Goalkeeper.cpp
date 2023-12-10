@@ -1,28 +1,17 @@
-// Goalkeeper.cpp
 #include "Goalkeeper.hpp"
-#include <random>
+#include "Match.hpp"
 
-void Goalkeeper::updateStats(Match m) {
-    matchesPlayed++;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, 6);
-    saves += dis(gen);
-    for (Player* player : m.getTeamTwo()->getPlayers()) {
-        if (player->getName() == this->name) {
-            goalsAgainst += m.getGoalOne();
-        }
-    }
-    for (Player* player : m.getTeamOne()->getPlayers()) {
-        if (player->getName() == this->name) {
-            goalsAgainst += m.getGoalTwo();
-        }
-    }
+void Goalkeeper::updateStats(Match * m) {
+    NoMatches++;
+    saves += rand() % 7;
+    goalsAgainst += (name == m->getTeamOne()->getName()) ? m->getGoalTwo() : m->getGoalOne();
 }
 
 void Goalkeeper::printStats() {
-    std::cout << "\nInformación de " << getName() << ":\n";
-    std::cout << "Goles: " << getGoals() << "\n";
-    std::cout << "Paradas: " << getSaves() << "\n";
-    std::cout << "Goles Recibidos: " << getGoalsAgainst() << "\n";
+    std::cout << "Nombre: " << name << std::endl;
+    std::cout << "Edad: " << age << std::endl;
+    std::cout << "Paradas: " << saves << std::endl;
+    std::cout << "Goles en contra: " << goalsAgainst << std::endl;
+    std::cout << "Partidos jugados: " << NoMatches << std::endl;
 }
+

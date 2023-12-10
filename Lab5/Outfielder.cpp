@@ -1,23 +1,31 @@
-// Outfielder.cpp
 #include "Outfielder.hpp"
-#include <random>
+#include "Match.hpp"
 
-void Outfielder::updateStats(Match m) {
-    matchesPlayed++;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis1(0, 6), dis2(0, 19), dis3(0, 49), dis4(0, 1);
-    shots += dis1(gen);
-    tackles += dis2(gen);
-    passes += dis3(gen);
-    assists += dis4(gen);
+void Outfielder::updateStats(Match * m) {
+    NoMatches++;
+    tackles += rand() % 20;
+    passes += rand() % 50;
+    shots += rand() % 7;
+    assists += rand() % 1;
+    for (Player* p : m->getScorersOne()){
+        if(p->getName() == this->name){
+            goals++;
+        }
+    }
+    for (Player* p : m->getScorersTwo()){
+        if(p->getName() == this->name){
+            goals++;
+        }
+    }
 }
 
 void Outfielder::printStats() {
-    std::cout << "\nInformación de " << getName() << ":\n";
-    std::cout << "Partidos jugados: " << getMatchesPlayed() << "\n";
-    std::cout << "Goles: " << getGoals() << "\n";
-    std::cout << "Pases: " << getPasses() << "\n";
-    std::cout << "Asistencias: " << getAssists() << "\n";
-    std::cout << "Entradas: " << getTackles() << "\n";
+    std::cout << "Nombre: " << name << std::endl;
+    std::cout << "Edad: " << age << std::endl;
+    std::cout << "Tackles: " << tackles << std::endl;
+    std::cout << "Pases: " << passes << std::endl;
+    std::cout << "Tiros: " << shots << std::endl;
+    std::cout << "Asistencias: " << assists << std::endl;
+    std::cout << "Goles: " << goals << std::endl;
+    std::cout << "Partidos jugados: " << NoMatches << std::endl;
 }
